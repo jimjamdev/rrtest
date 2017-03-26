@@ -45,7 +45,7 @@ module.exports = {
 
     plugins: [
         HtmlWebpackPluginConfig,
-        new webpack.optimize.CommonsChunkPlugin("common.js"),
+        new webpack.optimize.CommonsChunkPlugin("common"),
         /*new webpack.LoaderOptionsPlugin({
             minimize: true,
             debug: false
