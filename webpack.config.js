@@ -2,6 +2,9 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
+const env = process && process.env && process.env.NODE_ENV;
+const dev = !(env && env === 'production');
+
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
     template: './src/app/index.html',
     filename: 'index.html',
@@ -12,16 +15,19 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 
 module.exports = {
 
+    entry: {
+        app: './src/app' ,
+        vendor: ['react', 'react-dom', 'redux', 'react-redux']
+    },
+    output: {
+        filename: '[name].js',
+        path: path.resolve(__dirname, 'dist'),
+        sourceMapFilename: '[name].map'
+    },
+
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.jsx']
     },
-
-    entry: './src/app/index.tsx',
-    output: {
-        filename: '[name].bundle.js',
-        path: path.resolve(__dirname, 'dist')
-    },
-
 
     module: {
         rules: [{
@@ -37,5 +43,23 @@ module.exports = {
         ]
     },
 
-    plugins: [HtmlWebpackPluginConfig]
+    plugins: [
+        HtmlWebpackPluginConfig,
+        new webpack.optimize.CommonsChunkPlugin("common.js"),
+        /*new webpack.LoaderOptionsPlugin({
+            minimize: true,
+            debug: false
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            beautify: false,
+            mangle: {
+                screw_ie8: true,
+                keep_fnames: true
+            },
+            compress: {
+                screw_ie8: true
+            },
+            comments: false
+        })*/
+    ]
 };
