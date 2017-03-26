@@ -1,0 +1,33 @@
+{
+  "name": "react-redux-typescript-universal",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "Ian Jamieson",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack-dev-server --content-base src/"
+  },
+  "devDependencies": {
+    "@types/react": "^15.0.20",
+    "@types/react-dom": "^0.14.23",
+    "@types/react-redux": "^4.4.38",
+    "@types/react-router": "^4.0.1",
+    "awesome-typescript-loader": "^3.1.2",
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.1",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-react": "^6.23.0",
+    "babel-preset-stage-0": "^6.22.0",
+    "html-webpack-plugin": "^2.28.0",
+    "typescript": "^2.2.1",
+    "webpack": "^2.3.2",
+    "webpack-dev-server": "^2.4.2"
+  },
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.3",
+    "react-router": "^4.0.0-beta.8",
+    "redux": "^3.6.0"
+  }
+}
