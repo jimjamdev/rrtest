@@ -5,8 +5,7 @@
   "author": "Ian Jamieson",
   "license": "MIT",
   "scripts": {
-    "start": "cross-env NODE_ENV=development webpack-dev-server",
-    "build": "cross-env NODE_ENV=production webpack"
+    "start": "cross-env NODE_ENV=development webpack-dev-server"
   },
   "devDependencies": {
     "@types/react": "^15.0.20",
