@@ -1,6 +1,4 @@
-import {
-    TOGGLE_MENU,
-} from './app.actions';
+import { TOGGLE_MENU } from './app.actions';
 
 let initialState = {
   menuOpen: false
