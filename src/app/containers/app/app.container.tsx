@@ -2,7 +2,9 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { toggleMenu } from './app.actions';
 
-import { DatePicker, Button } from 'antd';
+import { Layout, DatePicker, Button, TimePicker } from 'antd';
+const { Header, Footer, Sider, Content } = Layout;
+const { RangePicker } = DatePicker;
 
 import './app.container.scss';
 
@@ -27,14 +29,16 @@ class AppContainer extends React.Component<any, any> {
 
   render() {
     return (
-     <div style={{textAlign: 'center'}} className="app">
-        <h1>Test</h1>
-         <Button onClick={this.handleClick}>toggle</Button>
-         <DatePicker />
-         <main>
-             {this.props.children}
-         </main>
-      </div>);
+        <Layout className="app">
+            <Sider>Sider</Sider>
+            <Layout>
+                <Header>Header</Header>
+                <Content>
+                    <RangePicker/> <TimePicker />
+                </Content>
+                <Footer>Footer</Footer>
+            </Layout>
+        </Layout>);
   }
 }
 
