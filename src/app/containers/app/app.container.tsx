@@ -13,7 +13,7 @@ class AppContainer extends React.Component<any, any> {
     }
 
     static propTypes = {
-        menuOpen: React.PropTypes.string
+        toggleMenu: React.PropTypes.string
     };
 
     handleClick() {
