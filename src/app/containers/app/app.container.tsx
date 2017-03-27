@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { connect } from 'react-redux';
 import { toggleMenu } from './app.actions';
 
 class AppContainer extends React.Component<{}, any> {
@@ -11,8 +12,8 @@ class AppContainer extends React.Component<{}, any> {
         this.handleClick = this.handleClick.bind(this);
     }
 
-    static PropTypes = {
-        //menuOpen: PropTypes.string
+    static propTypes = {
+        menuOpen: React.PropTypes.string
     };
 
     handleClick() {
