@@ -1,12 +1,13 @@
 import * as React from 'react';
-
 import { toggleMenu } from './app.actions';
 
-class AppContainer extends React.Component<{}, Object> {
+class AppContainer extends React.Component<{}, any> {
 
-    constructor(props:Object) {
+    constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            menuOpen: false
+        };
         this.handleClick = this.handleClick.bind(this);
     }
 
@@ -25,5 +26,11 @@ class AppContainer extends React.Component<{}, Object> {
       </div>);
   }
 }
+
+const mapStateToProps = (state) => {
+    return {
+
+    }
+};
 
 export default AppContainer;

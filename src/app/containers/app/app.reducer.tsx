@@ -2,10 +2,15 @@ import {
     TOGGLE_MENU,
 } from './app.actions';
 
-const AppReducer = ( state = {}, action ) => {
+let initialState = {
+  menuOpen: false
+};
+
+const AppReducer = ( state = initialState, action ) => {
     switch ( action.type ) {
         case TOGGLE_MENU:
             return {
+                menuOpen: true,
                 ...state,
             };
         default:
