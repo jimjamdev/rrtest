@@ -2,7 +2,7 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { toggleMenu } from './app.actions';
 
-class AppContainer extends React.Component<{}, any> {
+class AppContainer extends React.Component<any, any> {
 
     constructor(props) {
         super(props);
@@ -18,7 +18,7 @@ class AppContainer extends React.Component<{}, any> {
 
     handleClick() {
        console.log('Clicked');
-       //this.props.toggleMenu(true);
+       this.props.toggleMenu(true);
     };
 
   render() {
