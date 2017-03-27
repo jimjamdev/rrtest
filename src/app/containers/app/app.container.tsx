@@ -29,7 +29,7 @@ class AppContainer extends React.Component<{}, any> {
 
 const mapStateToProps = (state) => {
     return {
-
+        //app: AppReducer(state.app)
     }
 };
 

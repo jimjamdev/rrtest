@@ -10,7 +10,7 @@ const AppReducer = ( state = initialState, action ) => {
     switch ( action.type ) {
         case TOGGLE_MENU:
             return {
-                menuOpen: true,
+                menuOpen: !action,
                 ...state,
             };
         default:
