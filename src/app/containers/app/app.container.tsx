@@ -11,8 +11,13 @@ class AppContainer extends React.Component<{}, any> {
         this.handleClick = this.handleClick.bind(this);
     }
 
+    static PropTypes = {
+        //menuOpen: PropTypes.string
+    };
+
     handleClick() {
        console.log('Clicked');
+       //this.props.toggleMenu(true);
     };
 
   render() {
@@ -29,7 +34,7 @@ class AppContainer extends React.Component<{}, any> {
 
 const mapStateToProps = (state) => {
     return {
-        //app: AppReducer(state.app)
+       /* menuOpen: toggleMenu(state.menuOpen)*/
     }
 };
 

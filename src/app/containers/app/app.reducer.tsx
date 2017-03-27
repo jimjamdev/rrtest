@@ -6,11 +6,13 @@ let initialState = {
 
 const AppReducer = ( state = initialState, action ) => {
     switch ( action.type ) {
+
         case TOGGLE_MENU:
             return {
                 menuOpen: !action,
                 ...state,
             };
+
         default:
             return state;
     }
