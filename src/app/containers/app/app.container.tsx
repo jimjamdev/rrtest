@@ -6,7 +6,7 @@ class AppContainer extends React.Component<{}, Object> {
   render() {
     return (
      <div style={{textAlign: 'center'}}>
-        <h1>Hello World</h1>
+        <h1>App</h1>
          <main>
              {this.props.children}
          </main>
