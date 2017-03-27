@@ -1,10 +1,10 @@
-import * as React from 'react';
+import React, {Component, PropTypes} from 'react';
 import { connect } from 'react-redux';
 import { toggleMenu } from './app.actions';
 
 import { DatePicker } from 'antd';
 
-class AppContainer extends React.Component<any, any> {
+class AppContainer extends Component<any, any> {
 
     constructor(props) {
         super(props);
@@ -15,7 +15,7 @@ class AppContainer extends React.Component<any, any> {
     }
 
     static propTypes = {
-        toggleMenu: React.PropTypes.string
+        toggleMenu: PropTypes.string
     };
 
     handleClick() {
