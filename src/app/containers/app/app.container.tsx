@@ -2,6 +2,8 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { toggleMenu } from './app.actions';
 
+import { DatePicker } from 'antd';
+
 class AppContainer extends React.Component<any, any> {
 
     constructor(props) {
@@ -26,6 +28,7 @@ class AppContainer extends React.Component<any, any> {
      <div style={{textAlign: 'center'}}>
         <h1>Test</h1>
          <button onClick={this.handleClick}>toggle</button>
+         <DatePicker />
          <main>
              {this.props.children}
          </main>
