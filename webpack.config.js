@@ -19,7 +19,7 @@ module.exports = {
 
     entry: {
         app: './src/app' ,
-        vendor: ['react', 'react-dom', 'redux', 'react-redux', 'antd']
+        vendor: ['react', 'react-dom', 'redux', 'react-redux']
     },
     output: {
         filename: '[name].js',
