@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 import { AppReducer } from './containers';
 
@@ -8,7 +9,10 @@ const reducer = combineReducers({
 });
 
 const store = createStore(
-    reducer
+    reducer,
+    composeWithDevTools(
+        applyMiddleware(),
+    )
 );
 
 export default store;
