@@ -10,7 +10,14 @@ const dev = !(env && env === 'production');
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
     template: './src/app/index.html',
     filename: 'index.html',
-    inject: 'body'
+    inject: 'body',
+    chunksSortMode: (c1, c2) => {
+        // Corrige bug da ordenação de assets.
+        let orders = ['react', 'ui', 'common', 'app'];
+        let o1 = orders.indexOf(c1.names[0]);
+        let o2 = orders.indexOf(c2.names[0]);
+        return o1 - o2;
+    },
 });
 
 
@@ -64,6 +71,7 @@ module.exports = {
         /* Create separate bundle for React libs */
         new webpack.optimize.CommonsChunkPlugin({
             name: 'react',
+            chunksSortMode: 'dependency',
             minChunks(module, count) {
                 var context = module.context;
                 return context && (context.indexOf('node_modules\\react\\') >= 0 || context.indexOf('node_modules\\react-dom\\') || context.indexOf('node_modules\\react-redux\\') || context.indexOf('node_modules\\redux\\') || context.indexOf('node_modules\\react-router\\') >= 0);
