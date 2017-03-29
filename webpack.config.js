@@ -18,8 +18,7 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 module.exports = {
 
     entry: {
-        app: './src/app' ,
-        vendor: ['react', 'react-dom', 'redux', 'react-redux']
+        app: './src/app'
     },
     output: {
         filename: '[name].js',
@@ -43,16 +42,31 @@ module.exports = {
                 loader: 'awesome-typescript-loader'
             },
             {
-                test: /\.(css|scss|sass|less)$/,
+                test: /\.(css)$/,
+                exclude: /node_modules/,
+                loaders: ['style-loader', 'css-loader' ]
+            },
+            {
+                test: /\.(scss|sass)$/,
                 exclude: /node_modules/,
                 loaders: ['style-loader', 'css-loader', 'sass-loader', ]
+            },
+            {
+                test: /\.(less)$/,
+                exclude: /node_modules/,
+                loaders: ['style-loader', 'css-loader', 'less-loader', ]
             }
         ]
     },
 
     plugins: [
         HtmlWebpackPluginConfig,
-        new webpack.optimize.CommonsChunkPlugin("common"),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'vendor',
+            //children: true,
+            minChunks: module => /node_modules/.test(module.resource)
+            //async: true
+        }),
         /*new webpack.LoaderOptionsPlugin({
             minimize: true,
             debug: false
