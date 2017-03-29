@@ -9,6 +9,10 @@
             {
                 "libraryName": "antd",
                 "libraryDirectory": "lib"
+            },
+            {
+              "libraryName": "react",
+              "libraryDirectory": "lib"
             }
         ]
     ]
