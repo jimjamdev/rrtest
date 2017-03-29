@@ -61,12 +61,28 @@ module.exports = {
 
     plugins: [
         HtmlWebpackPluginConfig,
+        /* Create separate bundle for React libs */
         new webpack.optimize.CommonsChunkPlugin({
-            name: 'vendor',
-            //chunks: ['main'],
-            //children: true,
-            minChunks: module => /node_modules/.test(module.resource)
-            //async: true
+            name: 'react',
+            minChunks(module, count) {
+                var context = module.context;
+                return context && (context.indexOf('node_modules\\react\\') >= 0 || context.indexOf('node_modules\\react-dom\\') || context.indexOf('node_modules\\react-redux\\') || context.indexOf('node_modules\\redux\\') || context.indexOf('node_modules\\react-router\\') >= 0);
+            },
+        }),
+        /* Create separate bundle for UI libs */
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'ui',
+            minChunks(module, count) {
+                var context = module.context;
+                return context && (context.indexOf('node_modules\\antd\\') >= 0);
+            },
+        }),
+        /* Put anything used more than twice into a common bundle */
+        new webpack.optimize.CommonsChunkPlugin({
+            async: 'common',
+            minChunks(module, count) {
+                return count >= 2;
+            },
         }),
         /*new webpack.LoaderOptionsPlugin({
             minimize: true,
