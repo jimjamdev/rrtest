@@ -2,7 +2,9 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { toggleMenu } from './app.actions';
 
-import { Layout, DatePicker, Button, TimePicker } from 'antd';
+import Layout from 'antd/lib/layout';
+import DatePicker from 'antd/lib/date-picker';
+import TimePicker from 'antd/lib/time-picker';
 const { Header, Footer, Sider, Content } = Layout;
 const { RangePicker } = DatePicker;
 

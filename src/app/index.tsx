@@ -3,10 +3,8 @@ import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { Router } from 'react-router';
 
-import { LocaleProvider } from 'antd';
+import LocaleProvider  from 'antd/lib/locale-provider';
 import enUS from 'antd/lib/locale-provider/en_US';
-import { Layout } from 'antd';
-const { Header, Footer, Sider, Content } = Layout;
 
 import store from './store';
 

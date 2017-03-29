@@ -21,9 +21,9 @@ module.exports = {
         app: './src/app'
     },
     output: {
-        filename: '[name].js',
+        filename: '[name].[hash].js',
         path: path.resolve(__dirname, 'dist'),
-        sourceMapFilename: '[name].map'
+        sourceMapFilename: '[name].[hash].map'
     },
 
     resolve: {
@@ -39,7 +39,7 @@ module.exports = {
             {
                 test: /\.(ts|tsx)$/,
                 exclude: /node_modules/,
-                loader: 'awesome-typescript-loader'
+                loaders: ['babel-loader', 'ts-loader']
             },
             {
                 test: /\.(css)$/,
@@ -63,6 +63,7 @@ module.exports = {
         HtmlWebpackPluginConfig,
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendor',
+            //chunks: ['main'],
             //children: true,
             minChunks: module => /node_modules/.test(module.resource)
             //async: true
