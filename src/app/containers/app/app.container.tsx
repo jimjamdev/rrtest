@@ -1,10 +1,13 @@
+// LIBRARY IMPORTS
 import * as React from 'react';
-import { Link, Route } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom'
 //import { connect } from 'react-redux';
 //import { toggleMenu } from './app.actions';
 
-import { Layout } from 'antd';
-const { Header, Footer, Sider, Content } = Layout;
+// UI IMPORTS
+import AppBar from 'material-ui/AppBar';
+import Drawer from 'material-ui/Drawer';
+import MenuItem from 'material-ui/MenuItem';
 
 import HomeContainer from '../home';
 import BlogContainer from '../blog';
@@ -16,36 +19,31 @@ class AppContainer extends React.Component<any, any> {
     constructor(props) {
         super(props);
         this.state = {
-            menuOpen: false
+            open: true
         };
-        this.handleClick = this.handleClick.bind(this);
     }
+    handleToggle = () => this.setState({open: !this.state.open});
 
     static propTypes = {
         toggleMenu: React.PropTypes.string
     };
 
-    handleClick() {
-       console.log('Clicked');
-       this.props.toggleMenu(true);
-    };
-
   render() {
     return (
-            <Layout className="app">
-                <Sider>Sider</Sider>
-                <Layout>
-                    <Header>
-                        <Link to="/">Front</Link> <Link to="/blog">Blog</Link>
-                    </Header>
-                    <Content>
-                        <p>Content should show here</p>
-                        <Route exact path="/" component={HomeContainer} />
-                        <Route exact path="/blog" component={BlogContainer} />
-                    </Content>
-                    <Footer>Footer</Footer>
-                </Layout>
-            </Layout>
+    <div>
+        <AppBar
+            title="App"
+        />
+        <Drawer open={this.state.open}>
+            <MenuItem><Link to="/">Home</Link></MenuItem>
+            <MenuItem><Link to="/blog">Blog</Link></MenuItem>
+        </Drawer>
+        <div className="container">
+            <p>Content should show here</p>
+        </div>
+        <Route path="/" component={HomeContainer} />
+        <Route exact path="/blog" component={BlogContainer} />
+    </div>
     );
   }
 }

@@ -2,17 +2,14 @@
     "presets": [
         ["es2015", { "modules": false }],
         "react",
-        "stage-0"
+        "stage-0",
+        "stage-1"
     ],
     "plugins": [
         ["import",
             {
-                "libraryName": "antd",
+                "libraryName": "material-ui",
                 "libraryDirectory": "lib"
-            },
-            {
-              "libraryName": "react",
-              "libraryDirectory": "lib"
             }
         ]
     ]
