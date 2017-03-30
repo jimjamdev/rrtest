@@ -1,11 +1,10 @@
 import * as React from 'react';
 import { Link, Route } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { toggleMenu } from './app.actions';
+//import { connect } from 'react-redux';
+//import { toggleMenu } from './app.actions';
 
-import { Layout, DatePicker, TimePicker } from 'antd';
+import { Layout } from 'antd';
 const { Header, Footer, Sider, Content } = Layout;
-const { RangePicker } = DatePicker;
 
 import HomeContainer from '../home';
 import BlogContainer from '../blog';
@@ -40,12 +39,12 @@ class AppContainer extends React.Component<any, any> {
                         <Link to="/">Front</Link> <Link to="/blog">Blog</Link>
                     </Header>
                     <Content>
-                        <RangePicker/> <TimePicker />
+                        <p>Content should show here</p>
+                        <Route exact path="/" component={HomeContainer} />
+                        <Route exact path="/blog" component={BlogContainer} />
                     </Content>
                     <Footer>Footer</Footer>
                 </Layout>
-                <Route exact path="/" component={HomeContainer} />
-                <Route exact path="/blog" component={BlogContainer} />
             </Layout>
     );
   }

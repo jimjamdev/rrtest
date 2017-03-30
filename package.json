@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server",
-    "build": "cross-env NODE_ENV=production webpack -p"
+    "build": "npm run clean && cross-env NODE_ENV=production webpack -p",
+    "clean": "rimraf -r dist"
   },
   "devDependencies": {
     "@types/antd": "^1.0.0",
