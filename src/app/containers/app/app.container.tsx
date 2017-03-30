@@ -8,6 +8,9 @@ import { Route, Link } from 'react-router-dom'
 import AppBar from 'material-ui/AppBar';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
+import IconButton from 'material-ui/IconButton';
+import Menu from 'material-ui/svg-icons/navigation/menu';
+import NavigationClose from 'material-ui/svg-icons/navigation/close';
 
 // CONTAINER IMPORTS
 import HomeContainer from '../home';
@@ -35,6 +38,8 @@ class AppContainer extends React.Component<any, any> {
     <div>
         <AppBar
             title="App"
+            iconElementLeft={<IconButton onTouchTap={this.handleToggle}><Menu /></IconButton>}
+            iconElementRight={<IconButton><NavigationClose /></IconButton>}
         />
         <Drawer open={this.state.open}>
             <MenuItem
@@ -48,9 +53,9 @@ class AppContainer extends React.Component<any, any> {
         </Drawer>
         <div className="container">
             <p>Content should show here</p>
+            <Route path="/" component={HomeContainer} />
+            <Route exact path="/blog" component={BlogContainer} />
         </div>
-        <Route path="/" component={HomeContainer} />
-        <Route exact path="/blog" component={BlogContainer} />
     </div>
     );
   }

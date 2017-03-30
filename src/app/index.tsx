@@ -10,6 +10,7 @@ import store from './store';
 import './styles/index.scss'
 
 import AppContainer from './containers/app/app.container';
+import BlogContainer from './containers/blog/blog.container';
 
 ReactDOM.render((
         <MuiThemeProvider>
