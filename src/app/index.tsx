@@ -11,10 +11,10 @@ import store from './store';
 import AppContainer from './containers/app/app.container';
 
 ReactDOM.render((
-    <LocaleProvider locale={enUS}>
-            <Provider store={store}>
-                <AppContainer />
-            </Provider>
-    </LocaleProvider>
+    <BrowserRouter>
+        <Provider store={store}>
+            <AppContainer />
+        </Provider>
+    </BrowserRouter>
     ),
     document.getElementById('root'));

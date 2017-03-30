@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BrowserRouter, Link, Route, Match, Miss } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { toggleMenu } from './app.actions';
 
@@ -33,7 +33,6 @@ class AppContainer extends React.Component<any, any> {
 
   render() {
     return (
-        <BrowserRouter>
             <Layout className="app">
                 <Sider>Sider</Sider>
                 <Layout>
@@ -48,7 +47,6 @@ class AppContainer extends React.Component<any, any> {
                 <Route exact path="/" component={HomeContainer} />
                 <Route exact path="/blog" component={BlogContainer} />
             </Layout>
-        </BrowserRouter>
     );
   }
 }
