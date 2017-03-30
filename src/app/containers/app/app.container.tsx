@@ -8,7 +8,6 @@ import { Route, Link } from 'react-router-dom'
 import AppBar from 'material-ui/AppBar';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
-import FlatButton from 'material-ui/FlatButton';
 
 // CONTAINER IMPORTS
 import HomeContainer from '../home';
@@ -22,7 +21,7 @@ class AppContainer extends React.Component<any, any> {
     constructor(props) {
         super(props);
         this.state = {
-            open: true
+            open: false
         };
     }
     handleToggle = () => this.setState({open: !this.state.open});

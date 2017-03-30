@@ -1,8 +1,8 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom'
-//import injectTapEventPlugin from 'react-tap-event-plugin';
-//injectTapEventPlugin();
+import * as injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { Provider } from 'react-redux';
 
@@ -15,7 +15,7 @@ ReactDOM.render((
         <MuiThemeProvider>
             <Provider store={store}>
                 <BrowserRouter>
-                    <Route path="/" component={AppContainer} />
+                    <Route exact path="/" component={AppContainer} />
                 </BrowserRouter>
             </Provider>
         </MuiThemeProvider>
