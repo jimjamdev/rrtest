@@ -1,7 +1,7 @@
 // LIBRARY IMPORTS
 import * as React from 'react';
 // UI IMPORTS
-import * as AppBar from 'material-ui/AppBar';
+import AppBar from 'material-ui/AppBar';
 // STYLE IMPORTS
 import './AppBar.scss';
 

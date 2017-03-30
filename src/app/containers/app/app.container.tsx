@@ -9,8 +9,14 @@ import AppBar from 'material-ui/AppBar';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 import IconButton from 'material-ui/IconButton';
+import IconMenu from 'material-ui/IconMenu';
+import FontIcon from 'material-ui/FontIcon';
+import NavigationExpandMoreIcon from 'material-ui/svg-icons/navigation/expand-more';
 import Menu from 'material-ui/svg-icons/navigation/menu';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
+import {Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle} from 'material-ui/Toolbar';
+import DropDownMenu from 'material-ui/DropDownMenu';
+import RaisedButton from 'material-ui/RaisedButton';
 
 // CONTAINER IMPORTS
 import HomeContainer from '../home';
@@ -39,8 +45,28 @@ class AppContainer extends React.Component<any, any> {
         <AppBar
             title="App"
             iconElementLeft={<IconButton onTouchTap={this.handleToggle}><Menu /></IconButton>}
-            iconElementRight={<IconButton><NavigationClose /></IconButton>}
+            iconElementRight={<div><IconButton onTouchTap={this.handleToggle}><NavigationClose /></IconButton></div>}
         />
+        <Toolbar>
+            <ToolbarGroup>
+                <ToolbarTitle text="Options" />
+            </ToolbarGroup>
+            <ToolbarGroup>
+                <FontIcon className="muidocs-icon-custom-sort" />
+                <ToolbarSeparator />
+                <RaisedButton label="Create Broadcast" primary={true} />
+                <IconMenu
+                    iconButtonElement={
+                        <IconButton touch={true}>
+                            <NavigationExpandMoreIcon />
+                        </IconButton>
+                    }
+                >
+                    <MenuItem primaryText="Download" />
+                    <MenuItem primaryText="More Info" />
+                </IconMenu>
+            </ToolbarGroup>
+        </Toolbar>
         <Drawer open={this.state.open}>
             <MenuItem
                 containerElement={<Link to="/" />}
@@ -54,7 +80,7 @@ class AppContainer extends React.Component<any, any> {
         <div className="container">
             <p>Content should show here</p>
             <Route path="/" component={HomeContainer} />
-            <Route exact path="/blog" component={BlogContainer} />
+            <Route path="/blog" component={BlogContainer} />
         </div>
     </div>
     );

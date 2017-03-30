@@ -10,13 +10,14 @@ import store from './store';
 import './styles/index.scss'
 
 import AppContainer from './containers/app/app.container';
+import HomeContainer from './containers/home/home.container';
 import BlogContainer from './containers/blog/blog.container';
 
 ReactDOM.render((
         <MuiThemeProvider>
             <Provider store={store}>
                 <BrowserRouter>
-                    <Route exact path="/" component={AppContainer} />
+                    <Route path="/" component={AppContainer} />
                 </BrowserRouter>
             </Provider>
         </MuiThemeProvider>
