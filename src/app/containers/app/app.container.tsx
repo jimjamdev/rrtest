@@ -1,12 +1,14 @@
 import * as React from 'react';
+import { BrowserRouter, Link, Route, Match, Miss } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { toggleMenu } from './app.actions';
 
-import Layout from 'antd/lib/layout';
-import DatePicker from 'antd/lib/date-picker';
-import TimePicker from 'antd/lib/time-picker';
+import { Layout, DatePicker, TimePicker } from 'antd';
 const { Header, Footer, Sider, Content } = Layout;
 const { RangePicker } = DatePicker;
+
+import HomeContainer from '../home';
+import BlogContainer from '../blog';
 
 import './app.container.scss';
 
@@ -31,16 +33,23 @@ class AppContainer extends React.Component<any, any> {
 
   render() {
     return (
-        <Layout className="app">
-            <Sider>Sider</Sider>
-            <Layout>
-                <Header>Header</Header>
-                <Content>
-                    <RangePicker/> <TimePicker />
-                </Content>
-                <Footer>Footer</Footer>
+        <BrowserRouter>
+            <Layout className="app">
+                <Sider>Sider</Sider>
+                <Layout>
+                    <Header>
+                        <Link to="/">Front</Link> <Link to="/blog">Blog</Link>
+                    </Header>
+                    <Content>
+                        <RangePicker/> <TimePicker />
+                    </Content>
+                    <Footer>Footer</Footer>
+                </Layout>
+                <Route exact path="/" component={HomeContainer} />
+                <Route exact path="/blog" component={BlogContainer} />
             </Layout>
-        </Layout>);
+        </BrowserRouter>
+    );
   }
 }
 

@@ -11,13 +11,6 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
     template: './src/app/index.html',
     filename: 'index.html',
     inject: 'body',
-    chunksSortMode: (c1, c2) => {
-        // Corrige bug da ordenação de assets.
-        let orders = ['react', 'ui', 'common', 'app'];
-        let o1 = orders.indexOf(c1.names[0]);
-        let o2 = orders.indexOf(c2.names[0]);
-        return o1 - o2;
-    },
 });
 
 
@@ -34,7 +27,7 @@ module.exports = {
     },
 
     resolve: {
-        extensions: ['.ts', '.tsx', '.js', '.jsx', '.css']
+        extensions: ['.ts', '.tsx', '.js', '.jsx', '.css', '.scss', '.less']
     },
 
     module: {
@@ -69,28 +62,32 @@ module.exports = {
     plugins: [
         HtmlWebpackPluginConfig,
         /* Create separate bundle for React libs */
-        new webpack.optimize.CommonsChunkPlugin({
+       /* new webpack.optimize.CommonsChunkPlugin({
+            name: 'vendor',
+        }),*/
+        /*new webpack.optimize.CommonsChunkPlugin({
             name: 'react',
-            chunksSortMode: 'dependency',
             minChunks(module, count) {
                 var context = module.context;
-                return context && (context.indexOf('node_modules\\react\\') >= 0 || context.indexOf('node_modules\\react-dom\\') || context.indexOf('node_modules\\react-redux\\') || context.indexOf('node_modules\\redux\\') || context.indexOf('node_modules\\react-router\\') >= 0);
+                return context && (
+                    context.indexOf('node_modules\\react\\') >= 0 ||
+                    context.indexOf('node_modules\\react-dom\\') ||
+                    context.indexOf('node_modules\\react-redux\\') ||
+                    context.indexOf('node_modules\\redux\\') ||
+                    context.indexOf('node_modules\\react-router\\') >= 0);
             },
         }),
-        /* Create separate bundle for UI libs */
+        /!* Create separate bundle for UI libs *!/
         new webpack.optimize.CommonsChunkPlugin({
             name: 'ui',
             minChunks(module, count) {
                 var context = module.context;
                 return context && (context.indexOf('node_modules\\antd\\') >= 0);
             },
-        }),
-        /* Put anything used more than twice into a common bundle */
+        }),*/
         new webpack.optimize.CommonsChunkPlugin({
-            async: 'common',
-            minChunks(module, count) {
-                return count >= 2;
-            },
+            name: 'vendor',
+            minChunks: module => /node_modules/.test(module.resource)
         }),
     ]
 };
