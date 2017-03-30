@@ -27,7 +27,11 @@ module.exports = {
     },
 
     resolve: {
-        extensions: ['.ts', '.tsx', '.js', '.jsx', '.scss']
+        extensions: ['.ts', '.tsx', '.js', '.jsx', '.scss'],
+        modules: [
+            path.resolve('./src/app'),
+            path.resolve('./node_modules')
+        ]
     },
 
     module: {
