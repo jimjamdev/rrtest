@@ -12,12 +12,13 @@ import './styles/index.scss'
 import AppContainer from './containers/app/app.container';
 
 ReactDOM.render((
-    <BrowserRouter>
         <MuiThemeProvider>
             <Provider store={store}>
-                <Route path="/" component={AppContainer} />
+                <BrowserRouter>
+                    <Route path="/" component={AppContainer} />
+                </BrowserRouter>
             </Provider>
         </MuiThemeProvider>
-    </BrowserRouter>
+
     ),
     document.getElementById('root'));

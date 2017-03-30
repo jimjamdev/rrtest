@@ -8,10 +8,13 @@ import { Route, Link } from 'react-router-dom'
 import AppBar from 'material-ui/AppBar';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
+import FlatButton from 'material-ui/FlatButton';
 
+// CONTAINER IMPORTS
 import HomeContainer from '../home';
 import BlogContainer from '../blog';
 
+// STYLE IMPORTS
 import './app.container.scss';
 
 class AppContainer extends React.Component<any, any> {
@@ -35,8 +38,14 @@ class AppContainer extends React.Component<any, any> {
             title="App"
         />
         <Drawer open={this.state.open}>
-            <MenuItem><Link to="/">Home</Link></MenuItem>
-            <MenuItem><Link to="/blog">Blog</Link></MenuItem>
+            <MenuItem
+                containerElement={<Link to="/" />}
+                primaryText="Home"
+            />
+            <MenuItem
+                containerElement={<Link to="/blog" />}
+                primaryText="Blog"
+            />
         </Drawer>
         <div className="container">
             <p>Content should show here</p>
