@@ -30,7 +30,8 @@ class AppContainer extends React.Component<any, any> {
     constructor(props) {
         super(props);
         this.state = {
-            open: false
+            open: false,
+            docked: true
         };
     }
     handleToggle = () => this.setState({open: !this.state.open});
@@ -49,7 +50,7 @@ class AppContainer extends React.Component<any, any> {
         />
         <Toolbar>
             <ToolbarGroup>
-                <ToolbarTitle text="Options" />
+                <ToolbarTitle text="Tasks" />
             </ToolbarGroup>
             <ToolbarGroup>
                 <FontIcon className="muidocs-icon-custom-sort" />
@@ -67,7 +68,7 @@ class AppContainer extends React.Component<any, any> {
                 </IconMenu>
             </ToolbarGroup>
         </Toolbar>
-        <Drawer open={this.state.open}>
+        <Drawer open={this.state.open} docked={this.state.docked}>
             <MenuItem
                 containerElement={<Link to="/" />}
                 primaryText="Home"
