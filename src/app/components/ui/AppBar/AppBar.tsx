@@ -1,16 +1,12 @@
 // LIBRARY IMPORTS
 import * as React from 'react';
 // UI IMPORTS
-import AppBar from 'material-ui/AppBar';
+import { AppBar } from 'react-toolbox/components/app_bar';
 // STYLE IMPORTS
-import './AppBar.scss';
+//import theme from 'AppBar.scss'
 
-class UiAppBar extends React.Component<any, any> {
-    render() {
-        return (
-            <AppBar {...this.props} />
-        )
-    }
-}
+const UiAppBar:any = (props:object) => (
+    <AppBar {...props} />
+);
 
 export default UiAppBar;

@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 
 console.info(`Running in ${process && process.env && process.env.NODE_ENV} mode`);
@@ -27,33 +28,60 @@ module.exports = {
     },
 
     resolve: {
-        extensions: ['.ts', '.tsx', '.js', '.jsx', '.scss'],
-        modules: [
+        extensions: ['.ts', '.tsx', '.js', '.jsx', '.scss', 'sass', '.css', '.less', '.json'],
+        /*modules: [
+            path.resolve('./src'),
             path.resolve('./src/app'),
             path.resolve('./node_modules')
-        ]
+        ]*/
     },
 
     module: {
         rules: [{
                 test: /\.(js|jsx)$/,
-                exclude: /node_modules/,
+                //exclude: /node_modules/,
                 loader: 'babel-loader'
             },
             {
                 test: /\.(ts|tsx)$/,
-                exclude: /node_modules/,
+                //exclude: /node_modules/,
                 loaders: ['babel-loader', 'ts-loader']
             },
             {
                 test: /\.(css)$/,
-                exclude: /node_modules/,
-                loaders: ['style-loader', 'css-loader' ]
+                //exclude: /node_modules/,
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'style-loader',
+                        loader: 'css-loader',
+                        options: {
+                            modules: true,
+                            sourceMap: true,
+                            importLoaders: 1,
+                            localIdentName: "[name]--[local]--[hash:base64:8]"
+                        }
+                    },
+                    'postcss-loader'
+                ]
             },
             {
-                test: /\.(scss|sass)$/,
-                exclude: /node_modules/,
-                loaders: ['style-loader', 'css-loader', 'sass-loader', ]
+                test: /\.(scss)$/,
+                //exclude: /node_modules/,
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'style-loader',
+                        loader: 'css-loader',
+                        options: {
+                            modules: true,
+                            sourceMap: true,
+                            importLoaders: 1,
+                            localIdentName: "[name]--[local]--[hash:base64:8]"
+                        }
+                    },
+                    'postcss-loader'
+                ]
             },
             {
                 test: /\.(less)$/,
