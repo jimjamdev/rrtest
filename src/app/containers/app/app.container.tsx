@@ -8,6 +8,7 @@ import { Route, Link } from 'react-router-dom'
 import AppBar from 'react-toolbox/lib/app_bar';
 import { IconButton, Button } from 'react-toolbox/lib/button';
 import { Layout, NavDrawer, Panel } from 'react-toolbox/lib/layout';
+import { Tab, Tabs } from 'react-toolbox/lib/tabs';
 import Navigation from 'react-toolbox/lib/navigation';
 
 // CONTAINER IMPORTS
@@ -22,6 +23,7 @@ class AppContainer extends React.Component<any, any> {
     constructor(props) {
         super(props);
         this.state = {
+            index: 0,
             drawerActive: false,
             drawerPinned: false,
         };
@@ -35,10 +37,14 @@ class AppContainer extends React.Component<any, any> {
         this.setState({ drawerPinned: !this.state.drawerPinned });
     }
 
+    handleTabChange = (index) => {
+        this.setState({index});
+    };
+
 
     render() {
     return (
-        <Layout>
+        <Layout className="app">
             <NavDrawer active={this.state.drawerActive}
                        pinned={this.state.drawerPinned} permanentAt='xl'
                        onOverlayClick={ this.toggleDrawerActive }>
@@ -47,13 +53,14 @@ class AppContainer extends React.Component<any, any> {
                 </Navigation>
             </NavDrawer>
             <Panel>
-                <AppBar title='App' leftIcon='menu' onLeftIconClick={ this.toggleDrawerActive } />
-                <Navigation type='horizontal'>
-                    <Button>Test</Button>
-                </Navigation>
-                <div style={{ flex: 1, overflowY: 'auto', padding: '1rem' }}>
-                    <h1>Main Content</h1>
-                </div>
+                <AppBar title='Things' leftIcon='menu' onLeftIconClick={ this.toggleDrawerActive } />
+                <Tabs index={this.state.index} onChange={this.handleTabChange}>
+                    <Tab label='Primary'><small>Primary content</small></Tab>
+                    <Tab label='Secondary'><small>Secondary content</small></Tab>
+                    <Tab label='Third'><small>Disabled content</small></Tab>
+                    <Tab label='Fourth'><small>Fourth content hidden</small></Tab>
+                    <Tab label='Fifth'><small>Fifth content</small></Tab>
+                </Tabs>
             </Panel>
         </Layout>
     );

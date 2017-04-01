@@ -1,7 +1,7 @@
 // LIBRARY IMPORTS
 import * as React from 'react';
 // UI IMPORTS
-import { AppBar } from 'react-toolbox/components/app_bar';
+import { AppBar } from 'react-toolbox/lib/app_bar';
 // STYLE IMPORTS
 //import theme from 'AppBar.scss'
 
