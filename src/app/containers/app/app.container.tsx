@@ -6,9 +6,8 @@ import { Route, Link } from 'react-router-dom'
 
 // UI IMPORTS
 import AppBar from 'react-toolbox/lib/app_bar';
-import Checkbox from 'react-toolbox/lib/checkbox';
-import IconButton from 'react-toolbox/lib/button';
-import { Layout, NavDrawer, Panel, Sidebar } from 'react-toolbox/lib/layout';
+import { IconButton, Button } from 'react-toolbox/lib/button';
+import { Layout, NavDrawer, Panel } from 'react-toolbox/lib/layout';
 import Navigation from 'react-toolbox/lib/navigation';
 
 // CONTAINER IMPORTS
@@ -24,8 +23,7 @@ class AppContainer extends React.Component<any, any> {
         super(props);
         this.state = {
             drawerActive: false,
-            drawerPinned: true,
-            sidebarPinned: false
+            drawerPinned: false,
         };
     }
 
@@ -37,39 +35,26 @@ class AppContainer extends React.Component<any, any> {
         this.setState({ drawerPinned: !this.state.drawerPinned });
     }
 
-    toggleSidebar = () => {
-        this.setState({ sidebarPinned: !this.state.sidebarPinned });
-    };
-
 
     render() {
     return (
         <Layout>
             <NavDrawer active={this.state.drawerActive}
-                       pinned={this.state.drawerPinned} permanentAt='xxxl'
+                       pinned={this.state.drawerPinned} permanentAt='xl'
                        onOverlayClick={ this.toggleDrawerActive }>
-                <p>
-                    Navigation, account switcher, etc. go here.
-                </p>
+                <Navigation type='vertical'>
+                    <IconButton icon='favorite' accent  onClick={ this.toggleDrawerPinned } />
+                </Navigation>
             </NavDrawer>
             <Panel>
-                <AppBar title='App' leftIcon='menu' onLeftIconClick={ this.toggleDrawerPinned } />
+                <AppBar title='App' leftIcon='menu' onLeftIconClick={ this.toggleDrawerActive } />
                 <Navigation type='horizontal'>
-                    nav
+                    <Button>Test</Button>
                 </Navigation>
-                <div style={{ flex: 1, overflowY: 'auto', padding: '1.8rem' }}>
+                <div style={{ flex: 1, overflowY: 'auto', padding: '1rem' }}>
                     <h1>Main Content</h1>
-                    <p>Main content goes here.</p>
-                    <Checkbox label='Pin drawer' checked={this.state.drawerPinned} onChange={this.toggleDrawerPinned} />
-                    <Checkbox label='Show sidebar' checked={this.state.sidebarPinned} onChange={this.toggleSidebar} />
                 </div>
             </Panel>
-            <Sidebar pinned={ this.state.sidebarPinned } width={ 5 }>
-                <div><IconButton icon='close' onClick={ this.toggleSidebar }/></div>
-                <div style={{ flex: 1 }}>
-                    <p>Supplemental content goes here.</p>
-                </div>
-            </Sidebar>
         </Layout>
     );
   }
