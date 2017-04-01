@@ -108,18 +108,18 @@ module.exports = {
                     context.indexOf('node_modules\\redux\\') ||
                     context.indexOf('node_modules\\react-router\\') >= 0);
             },
-        }),
-        /!* Create separate bundle for UI libs *!/
-        new webpack.optimize.CommonsChunkPlugin({
+        }),*/
+        // Create separate bundle for UI libs
+        /*new webpack.optimize.CommonsChunkPlugin({
             name: 'ui',
             minChunks(module, count) {
                 var context = module.context;
-                return context && (context.indexOf('node_modules\\antd\\') >= 0);
+                return context && (context.indexOf('node_modules\\react-toolbox\\') >= 0);
             },
         }),*/
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendor',
-            minChunks: module => /node_modules/.test(module.resource)
+            // minChunks: module => /node_modules/.test(module.resource)
         }),
     ]
 };
