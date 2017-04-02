@@ -1,6 +1,7 @@
 // LIBRARY IMPORTS
-import * as React from 'react';
-import { Route, Link } from 'react-router-dom'
+import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
+import CSSModules from 'react-css-modules';
 //import { connect } from 'react-redux';
 //import { toggleMenu } from './app.actions';
 
@@ -10,15 +11,17 @@ import { IconButton, Button } from 'react-toolbox/lib/button';
 import { Layout, NavDrawer, Panel } from 'react-toolbox/lib/layout';
 import { Tab, Tabs } from 'react-toolbox/lib/tabs';
 import Navigation from 'react-toolbox/lib/navigation';
+import Link from 'react-toolbox/lib/link';
 
 // CONTAINER IMPORTS
 import HomeContainer from '../home';
 import BlogContainer from '../blog';
 
 // STYLE IMPORTS
-import './app.container.scss';
+import styles from './app.container.scss';
+@CSSModules(styles)
 
-class AppContainer extends React.Component<any, any> {
+class AppContainer extends Component {
 
     constructor(props) {
         super(props);
@@ -44,12 +47,12 @@ class AppContainer extends React.Component<any, any> {
 
     render() {
     return (
-        <Layout className="app">
+        <Layout styleName="app">
             <NavDrawer active={this.state.drawerActive}
                        pinned={this.state.drawerPinned} permanentAt='xl'
                        onOverlayClick={ this.toggleDrawerActive }>
                 <Navigation type='vertical'>
-                    <IconButton icon='favorite' accent  onClick={ this.toggleDrawerPinned } />
+                    <Link href='http://' label='Inbox' icon='inbox' />
                 </Navigation>
             </NavDrawer>
             <Panel>
