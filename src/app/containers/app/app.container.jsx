@@ -9,6 +9,7 @@ import CSSModules from 'react-css-modules';
 import UiAppBar from '../../components/ui/AppBar/AppBar';
 import { IconButton, Button } from 'react-toolbox/lib/button';
 import { Layout, NavDrawer, Panel } from 'react-toolbox/lib/layout';
+import { Card, CardMedia, CardTitle, CardText, CardActions } from 'react-toolbox/lib/card';
 import { Tab, Tabs } from 'react-toolbox/lib/tabs';
 import Navigation from 'react-toolbox/lib/navigation';
 import Link from 'react-toolbox/lib/link';
@@ -58,11 +59,34 @@ class AppContainer extends Component {
             <Panel>
                 <UiAppBar />
                 <Tabs index={this.state.index} onChange={this.handleTabChange}>
-                    <Tab label='Summary'><small>Primary content</small></Tab>
+                    <Tab label='Summary'>
+
+                        <Card style={{width: '350px'}}>
+                            <CardTitle
+                                avatar="https://placeimg.com/80/80/animals"
+                                title="Avatar style title"
+                                subtitle="Subtitle here"
+                            />
+                            <CardMedia
+                                aspectRatio="wide"
+                                image="https://placeimg.com/800/450/nature"
+                            />
+                            <CardTitle
+                                title="Title goes here"
+                                subtitle="Subtitle here"
+                            />
+                            <CardText>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet atque beatae doloribus ducimus expedita illum laboriosam, laudantium maiores minus nobis odio possimus quasi quibusdam quidem, repellat repellendus similique. Iste.</CardText>
+                            <CardActions>
+                                <Button label="Action 1" />
+                                <Button label="Action 2" />
+                            </CardActions>
+                        </Card>
+
+                    </Tab>
                     <Tab label='General'><small>Secondary content</small></Tab>
-                    <Tab label='Third'><small>Disabled content</small></Tab>
-                    <Tab label='Fourth'><small>Fourth content hidden</small></Tab>
-                    <Tab label='Fifth'><small>Fifth content</small></Tab>
+                    <Tab label='Classifications'><small>Disabled content</small></Tab>
+                    <Tab label='Location'><small>Fourth content hidden</small></Tab>
+                    <Tab label='Files'><small>Fifth content</small></Tab>
                 </Tabs>
             </Panel>
         </Layout>
