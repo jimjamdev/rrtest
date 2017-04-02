@@ -56,10 +56,10 @@ class AppContainer extends Component {
                 </Navigation>
             </NavDrawer>
             <Panel>
-                <UiAppBar title='Things' leftIcon='menu' onLeftIconClick={ this.toggleDrawerActive } />
+                <UiAppBar />
                 <Tabs index={this.state.index} onChange={this.handleTabChange}>
-                    <Tab label='Primary'><small>Primary content</small></Tab>
-                    <Tab label='Secondary'><small>Secondary content</small></Tab>
+                    <Tab label='Summary'><small>Primary content</small></Tab>
+                    <Tab label='General'><small>Secondary content</small></Tab>
                     <Tab label='Third'><small>Disabled content</small></Tab>
                     <Tab label='Fourth'><small>Fourth content hidden</small></Tab>
                     <Tab label='Fifth'><small>Fifth content</small></Tab>
