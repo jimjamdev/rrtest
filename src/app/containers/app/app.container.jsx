@@ -6,7 +6,7 @@ import CSSModules from 'react-css-modules';
 //import { toggleMenu } from './app.actions';
 
 // UI IMPORTS
-import AppBar from 'react-toolbox/lib/app_bar';
+import UiAppBar from '../../components/ui/AppBar/AppBar';
 import { IconButton, Button } from 'react-toolbox/lib/button';
 import { Layout, NavDrawer, Panel } from 'react-toolbox/lib/layout';
 import { Tab, Tabs } from 'react-toolbox/lib/tabs';
@@ -56,7 +56,7 @@ class AppContainer extends Component {
                 </Navigation>
             </NavDrawer>
             <Panel>
-                <AppBar title='Things' leftIcon='menu' onLeftIconClick={ this.toggleDrawerActive } />
+                <UiAppBar title='Things' leftIcon='menu' onLeftIconClick={ this.toggleDrawerActive } />
                 <Tabs index={this.state.index} onChange={this.handleTabChange}>
                     <Tab label='Primary'><small>Primary content</small></Tab>
                     <Tab label='Secondary'><small>Secondary content</small></Tab>

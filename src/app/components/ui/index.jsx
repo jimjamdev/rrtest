@@ -1,3 +1,3 @@
 import UiAppBar from './AppBar';
 
-export { UiAppBar }
+export default { UiAppBar }

@@ -1,8 +1,8 @@
-import * as React from 'react';
+import React, { Component } from 'react';
 
 import './blog.container.scss';
 
-class BlogContainer extends React.Component<any, any> {
+class BlogContainer extends Component {
     render() {
         return (
             <div>
