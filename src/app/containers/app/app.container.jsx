@@ -64,7 +64,7 @@ class AppContainer extends Component {
 
                         <Grid fluid>
                             <Row>
-                                <Col xs={3}>
+                                <Col xs={12} lg={3}>
                                     <Card>
                                         <CardTitle
                                             avatar="https://placeimg.com/80/80/animals"
@@ -86,7 +86,7 @@ class AppContainer extends Component {
                                         </CardActions>
                                     </Card>
                                 </Col>
-                                <Col xs={3}>
+                                <Col xs={12} lg={3}>
                                     <Card>
                                         <CardTitle
                                             avatar="https://placeimg.com/80/80/animals"
@@ -108,7 +108,7 @@ class AppContainer extends Component {
                                         </CardActions>
                                     </Card>
                                 </Col>
-                                <Col xs={3}>
+                                <Col xs={12} lg={3}>
                                     <Card>
                                         <CardTitle
                                             avatar="https://placeimg.com/80/80/animals"
@@ -130,7 +130,7 @@ class AppContainer extends Component {
                                         </CardActions>
                                     </Card>
                                 </Col>
-                                <Col xs={3}>
+                                <Col xs={12} lg={3}>
                                     <Card>
                                         <CardTitle
                                             avatar="https://placeimg.com/80/80/animals"
