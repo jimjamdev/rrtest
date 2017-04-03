@@ -11,6 +11,7 @@ import { IconButton, Button } from 'react-toolbox/lib/button';
 import { Layout, NavDrawer, Panel } from 'react-toolbox/lib/layout';
 import { Card, CardMedia, CardTitle, CardText, CardActions } from 'react-toolbox/lib/card';
 import { Tab, Tabs } from 'react-toolbox/lib/tabs';
+import {Grid, Col, Row} from 'react-styled-flexboxgrid'
 import Navigation from 'react-toolbox/lib/navigation';
 import Link from 'react-toolbox/lib/link';
 
@@ -48,7 +49,7 @@ class AppContainer extends Component {
 
     render() {
     return (
-        <Layout styleName="app">
+        <Layout styleName="app-container">
             <NavDrawer active={this.state.drawerActive}
                        pinned={this.state.drawerPinned} permanentAt='xl'
                        onOverlayClick={ this.toggleDrawerActive }>
@@ -61,26 +62,98 @@ class AppContainer extends Component {
                 <Tabs index={this.state.index} onChange={this.handleTabChange}>
                     <Tab label='Summary'>
 
-                        <Card style={{width: '350px'}}>
-                            <CardTitle
-                                avatar="https://placeimg.com/80/80/animals"
-                                title="Avatar style title"
-                                subtitle="Subtitle here"
-                            />
-                            <CardMedia
-                                aspectRatio="wide"
-                                image="https://placeimg.com/800/450/nature"
-                            />
-                            <CardTitle
-                                title="Title goes here"
-                                subtitle="Subtitle here"
-                            />
-                            <CardText>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet atque beatae doloribus ducimus expedita illum laboriosam, laudantium maiores minus nobis odio possimus quasi quibusdam quidem, repellat repellendus similique. Iste.</CardText>
-                            <CardActions>
-                                <Button label="Action 1" />
-                                <Button label="Action 2" />
-                            </CardActions>
-                        </Card>
+                        <Grid fluid>
+                            <Row>
+                                <Col xs={3}>
+                                    <Card>
+                                        <CardTitle
+                                            avatar="https://placeimg.com/80/80/animals"
+                                            title="Avatar style title"
+                                            subtitle="Subtitle here"
+                                        />
+                                        <CardMedia
+                                            aspectRatio="wide"
+                                            image="https://placeimg.com/800/450/nature"
+                                        />
+                                        <CardTitle
+                                            title="Title goes here"
+                                            subtitle="Subtitle here"
+                                        />
+                                        <CardText>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet atque beatae doloribus ducimus expedita illum laboriosam, laudantium maiores minus nobis odio possimus quasi quibusdam quidem, repellat repellendus similique. Iste.</CardText>
+                                        <CardActions>
+                                            <Button label="Action 1" />
+                                            <Button label="Action 2" />
+                                        </CardActions>
+                                    </Card>
+                                </Col>
+                                <Col xs={3}>
+                                    <Card>
+                                        <CardTitle
+                                            avatar="https://placeimg.com/80/80/animals"
+                                            title="Avatar style title"
+                                            subtitle="Subtitle here"
+                                        />
+                                        <CardMedia
+                                            aspectRatio="wide"
+                                            image="https://placeimg.com/800/450/nature"
+                                        />
+                                        <CardTitle
+                                            title="Title goes here"
+                                            subtitle="Subtitle here"
+                                        />
+                                        <CardText>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet atque beatae doloribus ducimus expedita illum laboriosam, laudantium maiores minus nobis odio possimus quasi quibusdam quidem, repellat repellendus similique. Iste.</CardText>
+                                        <CardActions>
+                                            <Button label="Action 1" />
+                                            <Button label="Action 2" />
+                                        </CardActions>
+                                    </Card>
+                                </Col>
+                                <Col xs={3}>
+                                    <Card>
+                                        <CardTitle
+                                            avatar="https://placeimg.com/80/80/animals"
+                                            title="Avatar style title"
+                                            subtitle="Subtitle here"
+                                        />
+                                        <CardMedia
+                                            aspectRatio="wide"
+                                            image="https://placeimg.com/800/450/nature"
+                                        />
+                                        <CardTitle
+                                            title="Title goes here"
+                                            subtitle="Subtitle here"
+                                        />
+                                        <CardText>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet atque beatae doloribus ducimus expedita illum laboriosam, laudantium maiores minus nobis odio possimus quasi quibusdam quidem, repellat repellendus similique. Iste.</CardText>
+                                        <CardActions>
+                                            <Button label="Action 1" />
+                                            <Button label="Action 2" />
+                                        </CardActions>
+                                    </Card>
+                                </Col>
+                                <Col xs={3}>
+                                    <Card>
+                                        <CardTitle
+                                            avatar="https://placeimg.com/80/80/animals"
+                                            title="Avatar style title"
+                                            subtitle="Subtitle here"
+                                        />
+                                        <CardMedia
+                                            aspectRatio="wide"
+                                            image="https://placeimg.com/800/450/nature"
+                                        />
+                                        <CardTitle
+                                            title="Title goes here"
+                                            subtitle="Subtitle here"
+                                        />
+                                        <CardText>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet atque beatae doloribus ducimus expedita illum laboriosam, laudantium maiores minus nobis odio possimus quasi quibusdam quidem, repellat repellendus similique. Iste.</CardText>
+                                        <CardActions>
+                                            <Button label="Action 1" />
+                                            <Button label="Action 2" />
+                                        </CardActions>
+                                    </Card>
+                                </Col>
+                            </Row>
+                        </Grid>
 
                     </Tab>
                     <Tab label='General'><small>Secondary content</small></Tab>

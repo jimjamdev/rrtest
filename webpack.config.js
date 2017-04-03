@@ -48,8 +48,13 @@ module.exports = {
                 loaders: ['babel-loader', 'ts-loader']
             },
             {
+                test: /\.css$/,
+                loader: 'style-loader!css-loader?modules',
+                include: /flexboxgrid/
+            },
+            {
                 test: /\.(css)$/,
-                //exclude: /node_modules/,
+                exclude: /flexboxgrid/,
                 use: [
                     'style-loader',
                     {
