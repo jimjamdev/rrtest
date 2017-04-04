@@ -48,13 +48,7 @@ module.exports = {
                 loaders: ['babel-loader', 'ts-loader']
             },
             {
-                test: /\.css$/,
-                loader: 'style-loader!css-loader?modules',
-                include: /flexboxgrid/
-            },
-            {
                 test: /\.(css)$/,
-                exclude: /flexboxgrid/,
                 use: [
                     'style-loader',
                     {
@@ -85,7 +79,8 @@ module.exports = {
                             localIdentName: "[name]--[local]--[hash:base64:8]"
                         }
                     },
-                    'postcss-loader'
+                    'sass-loader',
+                  /*  'postcss-loader'*/
                 ]
             },
             {

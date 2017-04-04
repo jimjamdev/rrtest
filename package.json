@@ -5,51 +5,9 @@
   "author": "Ian Jamieson",
   "license": "MIT",
   "scripts": {
-    "start": "npm run toolbox && cross-env NODE_ENV=development webpack-dev-server",
+    "start": "cross-env NODE_ENV=development webpack-dev-server",
     "build": "npm run clean && cross-env NODE_ENV=production webpack -p",
-    "clean": "rimraf -r dist",
-    "toolbox": "react-toolbox-themr"
-  },
-  "reactToolbox": {
-    "include": [
-      "AUTOCOMPLETE",
-      "AVATAR",
-      "BUTTON",
-      "CARD",
-      "CHECKBOX",
-      "CHIP",
-      "DATE_PICKER",
-      "DIALOG",
-      "DRAWER",
-      "DROPDOWN",
-      "INPUT",
-      "LAYOUT",
-      "LINK",
-      "LIST",
-      "MENU",
-      "NAVIGATION",
-      "OVERLAY",
-      "PROGRESS_BAR",
-      "RADIO",
-      "RIPPLE",
-      "SLIDER",
-      "SNACKBAR",
-      "SWITCH",
-      "TABLE",
-      "TABS",
-      "TIME_PICKER",
-      "TOOLTIP"
-    ],
-    "customProperties": {
-      "animation-duration": "0.3s",
-      "color-accent": "var(--palette-pink-a200)",
-      "color-accent-dark": "var(--palette-pink-700)",
-      "color-primary": "var(--palette-pink-500)",
-      "color-primary-dark": "var(--palette-pink-700)",
-      "color-primary-contrast": "var(--color-dark-contrast)",
-      "color-accent-contrast": "var(--color-dark-contrast)"
-    },
-    "output": "assets/react-toolbox"
+    "clean": "rimraf -r dist"
   },
   "devDependencies": {
     "@types/antd": "^1.0.0",
@@ -94,7 +52,11 @@
     "webpack-dev-server": "^2.4.2"
   },
   "dependencies": {
+    "classnames": "^2.2.5",
+    "immutability-helper": "^2.1.2",
     "react": "^15.4.2",
+    "react-addons-css-transition-group": "^15.4.2",
+    "react-addons-transition-group": "^15.4.2",
     "react-css-modules": "^4.2.0",
     "react-css-themr": "^2.0.0",
     "react-dom": "^15.4.2",

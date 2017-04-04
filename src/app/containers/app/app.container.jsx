@@ -49,7 +49,7 @@ class AppContainer extends Component {
 
     render() {
     return (
-        <Layout styleName="app-container">
+        <Layout styleName="appContainer" className="full-height">
             <NavDrawer active={this.state.drawerActive}
                        pinned={this.state.drawerPinned} permanentAt='xl'
                        onOverlayClick={ this.toggleDrawerActive }>
@@ -152,7 +152,6 @@ class AppContainer extends Component {
                                     </Card>
                                 </Col>
                             </Row>
-
                     </Tab>
                     <Tab label='General'><small>Secondary content</small></Tab>
                     <Tab label='Classifications'><small>Disabled content</small></Tab>

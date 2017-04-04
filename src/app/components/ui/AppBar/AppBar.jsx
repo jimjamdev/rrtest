@@ -11,10 +11,12 @@ import styles from './AppBar.scss'
 class UiAppBar extends Component {
     render() {
         return (
-            <AppBar styleName="AppBar" {...this.props}>
-                <Avatar styleName="AppBar__avatar"><img src="https://placeimg.com/80/80/animals"/></Avatar>
-                <h1 styleName="AppBar__title">Things</h1>
-            </AppBar>
+            <div styleName="AppBar">
+                <AppBar>
+                    <Avatar styleName="AppBar__avatar"><img src="https://placeimg.com/80/80/animals"/></Avatar>
+                    <h1 styleName="AppBar__title">Things</h1>
+                </AppBar>
+            </div>
         );
     }
 }
