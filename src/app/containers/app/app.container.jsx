@@ -62,7 +62,6 @@ class AppContainer extends Component {
                 <Tabs index={this.state.index} onChange={this.handleTabChange}>
                     <Tab label='Summary'>
 
-                        <Grid fluid>
                             <Row>
                                 <Col xs={12} lg={3}>
                                     <Card>
@@ -153,7 +152,6 @@ class AppContainer extends Component {
                                     </Card>
                                 </Col>
                             </Row>
-                        </Grid>
 
                     </Tab>
                     <Tab label='General'><small>Secondary content</small></Tab>
