@@ -7,6 +7,7 @@ import CSSModules from 'react-css-modules';
 
 // UI IMPORTS
 import Button from 'semantic-ui-react/dist/es/elements/Button';
+import UiAppBar from '../../components/ui/AppBar';
 
 // CONTAINER IMPORTS
 import HomeContainer from '../home';
@@ -23,27 +24,13 @@ class AppContainer extends Component {
         this.state = {};
     }
 
-    toggleDrawerActive = () => {
-        this.setState({ drawerActive: !this.state.drawerActive });
-    };
-
-    toggleDrawerPinned = () => {
-        this.setState({ drawerPinned: !this.state.drawerPinned });
-    }
-
-    handleTabChange = (index) => {
-        this.setState({index});
-    };
-
-
     render() {
     return (
-       <div>
+       <div styleName="AppContainer">
+
            <Button animated>
-               <Button.Content visible>Next</Button.Content>
-               <Button.Content hidden>
-                   Part
-               </Button.Content>
+               <Button.Content visible>One</Button.Content>
+               <Button.Content hidden>Two</Button.Content>
            </Button>
        </div>
     );

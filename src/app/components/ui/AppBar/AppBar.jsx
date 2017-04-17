@@ -11,7 +11,7 @@ class UiAppBar extends Component {
     render() {
         return (
             <div styleName="AppBar">
-              test
+              AppBar
             </div>
         );
     }
