@@ -96,7 +96,10 @@ module.exports = {
                 test: /\.(less)$/,
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
-                    use: ['css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]', 'less-loader']
+                    use: [
+                        'css-loader',
+                        'less-loader'
+                    ]
                 })
             },
             {
@@ -110,6 +113,7 @@ module.exports = {
     plugins: [
         HtmlWebpackPluginConfig,
         new webpack.LoaderOptionsPlugin({
+            loader: 'css-loader',
             options: {
                 lessLoader: {
                     lessPlugins: [
