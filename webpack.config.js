@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const RewriteImportPlugin = require("less-plugin-rewrite-import");
 const path = require('path');
 
 console.info(`Running in ${process && process.env && process.env.NODE_ENV} mode`);
@@ -42,11 +43,11 @@ module.exports = {
                 //exclude: /node_modules/,
                 loader: 'babel-loader'
             },
-            {
+            /*{
                 test: /\.(ts|tsx)$/,
                 //exclude: /node_modules/,
                 loaders: ['babel-loader', 'ts-loader']
-            },
+            },*/
             {
                 test: /\.(css)$/,
                 use: [
@@ -71,7 +72,6 @@ module.exports = {
                     'style-loader',
                     {
                         loader: 'style-loader',
-                        loader: 'css-loader',
                         options: {
                             modules: true,
                             sourceMap: true,
@@ -79,20 +79,35 @@ module.exports = {
                             localIdentName: "[name]--[local]--[hash:base64:8]"
                         }
                     },
+                    'css-loader',
                     'sass-loader',
                   /*  'postcss-loader'*/
                 ]
             },
             {
                 test: /\.(less)$/,
-                exclude: /node_modules/,
-                loaders: ['style-loader', 'css-loader', 'less-loader', ]
+                loaders: ['style-loader', 'css-loader', 'less-loader']
             }
         ]
     },
 
+
     plugins: [
         HtmlWebpackPluginConfig,
+        new webpack.LoaderOptionsPlugin({
+            // test: /\.xxx$/, // may apply this only for some modules
+            options: {
+                lessLoader: {
+                    lessPlugins: [
+                        new RewriteImportPlugin({
+                            paths: {
+                                '../../theme.config':  __dirname + '/src/app/styles/semantic-ui/theme.config',
+                            },
+                        }),
+                    ],
+                },
+            }
+        }),
         /* Create separate bundle for React libs */
        /* new webpack.optimize.CommonsChunkPlugin({
             name: 'vendor',
