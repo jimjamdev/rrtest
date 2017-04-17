@@ -94,11 +94,10 @@ module.exports = {
             },
             {
                 test: /\.(less)$/,
-                use: [
-                    'style-loader',
-                    'css-loader',
-                    'less-loader'
-                ]
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: ['css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]', 'less-loader']
+                })
             },
             {
                 test: /\.(ttf|eot|svg|woff2?)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
@@ -111,7 +110,6 @@ module.exports = {
     plugins: [
         HtmlWebpackPluginConfig,
         new webpack.LoaderOptionsPlugin({
-            // test: /\.xxx$/, // may apply this only for some modules
             options: {
                 lessLoader: {
                     lessPlugins: [
@@ -123,6 +121,12 @@ module.exports = {
                     ],
                 },
             }
+        }),
+        new ExtractTextPlugin({
+            filename:  (getPath) => {
+                return getPath('css/[name].css').replace('css/js', 'css');
+            },
+            allChunks: true
         }),
         /* Create separate bundle for React libs */
        /* new webpack.optimize.CommonsChunkPlugin({

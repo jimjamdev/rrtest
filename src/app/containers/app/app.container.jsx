@@ -6,7 +6,7 @@ import CSSModules from 'react-css-modules';
 //import { toggleMenu } from './app.actions';
 
 // UI IMPORTS
-
+import Button from 'semantic-ui-react/dist/es/elements/Button';
 
 // CONTAINER IMPORTS
 import HomeContainer from '../home';
@@ -20,12 +20,7 @@ class AppContainer extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            index: 0,
-            drawerActive: false,
-            drawerPinned: false,
-            selectValues: ['Active', 'Something else']
-        };
+        this.state = {};
     }
 
     toggleDrawerActive = () => {
@@ -43,7 +38,14 @@ class AppContainer extends Component {
 
     render() {
     return (
-       <div>App</div>
+       <div>
+           <Button animated>
+               <Button.Content visible>Next</Button.Content>
+               <Button.Content hidden>
+                   Part
+               </Button.Content>
+           </Button>
+       </div>
     );
   }
 }
