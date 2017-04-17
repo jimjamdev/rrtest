@@ -8,7 +8,7 @@
     "start": "cross-env NODE_ENV=development webpack-dev-server",
     "build": "npm run clean && cross-env NODE_ENV=production webpack -p",
     "clean": "rimraf -r dist",
-    "postinstall": "node font-fix.js && cp ./node_modules/semantic-ui-less/theme.config.example ./node_modules/semantic-ui-less/theme.config"
+    "postinstall": "node font-fix.js && mv ./node_modules/semantic-ui-less/theme.config.example ./node_modules/semantic-ui-less/theme.config"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.7",
