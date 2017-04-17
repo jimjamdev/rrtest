@@ -85,8 +85,24 @@ module.exports = {
                 ]
             },
             {
+                test: /\.(png|gif)$/,
+                loader: 'url-loader'
+            },
+            {
+                test: /\.jpg$/,
+                loader: 'file-loader'
+            },
+            {
                 test: /\.(less)$/,
-                loaders: ['style-loader', 'css-loader', 'less-loader']
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'less-loader'
+                ]
+            },
+            {
+                test: /\.(ttf|eot|svg|woff2?)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                loader: 'file-loader'
             }
         ]
     },
