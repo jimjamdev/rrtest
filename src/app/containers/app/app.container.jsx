@@ -7,7 +7,7 @@ import CSSModules from 'react-css-modules';
 
 // UI IMPORTS
 import Button from 'semantic-ui-react/dist/es/elements/Button';
-import UiAppBar from '../../components/ui/AppBar';
+import UiAppBar from '../../components/ui/AppBar/AppBar';
 
 // CONTAINER IMPORTS
 import HomeContainer from '../home';
@@ -27,7 +27,7 @@ class AppContainer extends Component {
     render() {
     return (
        <div styleName="AppContainer">
-
+            <UiAppBar/>
            <Button animated>
                <Button.Content visible>One</Button.Content>
                <Button.Content hidden>Two</Button.Content>
