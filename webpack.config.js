@@ -113,7 +113,7 @@ module.exports = {
     plugins: [
         HtmlWebpackPluginConfig,
         new webpack.LoaderOptionsPlugin({
-            loader: 'css-loader',
+            test: /\.(less)$/,
             options: {
                 lessLoader: {
                     lessPlugins: [
