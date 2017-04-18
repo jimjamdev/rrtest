@@ -7,8 +7,6 @@ import store from './store';
 import './styles/index.less'
 
 import AppContainer from './containers/app/app.container';
-import HomeContainer from './containers/home/home.container';
-import BlogContainer from './containers/blog/blog.container';
 
 ReactDOM.render((
             <Provider store={store}>

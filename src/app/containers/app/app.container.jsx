@@ -12,8 +12,8 @@ import Container from 'semantic-ui-react/dist/es/elements/Container';
 import UiAppBar from '../../components/ui/AppBar/AppBar';
 
 // CONTAINER IMPORTS
-import HomeContainer from '../home/home.container';
-import BlogContainer from '../blog/blog.container';
+import { HomeContainer } from '../home';
+import { BlogContainer } from '../blog';
 
 // STYLE IMPORTS
 import styles from './app.container.less';
