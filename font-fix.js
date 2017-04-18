@@ -21,4 +21,3 @@ function fixFontPath(filename) {
 }
 
 fixFontPath('node_modules/semantic-ui-less/themes/default/globals/site.variables');
-fixFontPath('node_modules/semantic-ui-less/themes/material/globals/site.variables');

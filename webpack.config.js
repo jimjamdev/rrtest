@@ -96,7 +96,7 @@ module.exports = {
                 test: /\.(less)$/,
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
-                    use: [
+                    loader: [
                         'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]---[hash:base64:5]',
                         'less-loader'
                     ]
@@ -123,9 +123,9 @@ module.exports = {
         HtmlWebpackPluginConfig,
         new ExtractTextPlugin({
             filename: '[name].css',
-            allChunks: true
+            allChunks: false
         }),
-        new webpack.LoaderOptionsPlugin({
+       /* new webpack.LoaderOptionsPlugin({
             minimize: false,
             debug: false,
             options: {
@@ -139,7 +139,7 @@ module.exports = {
                     ],
                 },
             }
-        }),
+        }),*/
         /* Create separate bundle for React libs */
        /* new webpack.optimize.CommonsChunkPlugin({
             name: 'vendor',
