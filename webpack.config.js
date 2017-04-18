@@ -108,29 +108,37 @@ module.exports = {
             }
         ]
     },
+   /* lessLoader: {
+        lessPlugins: [
+            new RewriteImportPlugin({
+                paths: {
+                    '../../theme.config':  __dirname + '/app/semantic-ui/theme.config',
+                },
+            }),
+        ],
+    },*/
 
 
     plugins: [
         HtmlWebpackPluginConfig,
+        new ExtractTextPlugin({
+            filename: '[name].css',
+            allChunks: true
+        }),
         new webpack.LoaderOptionsPlugin({
-            test: /\.(less)$/,
+            minimize: false,
+            debug: false,
             options: {
                 lessLoader: {
                     lessPlugins: [
                         new RewriteImportPlugin({
                             paths: {
-                                '../../theme.config':  __dirname + '/src/app/styles/semantic-ui/theme.config',
+                                '../../theme.config': __dirname + '/src/app/styles/semantic-ui/theme.config',
                             },
                         }),
                     ],
                 },
             }
-        }),
-        new ExtractTextPlugin({
-            filename:  (getPath) => {
-                return getPath('css/[name].css').replace('css/js', 'css');
-            },
-            allChunks: true
         }),
         /* Create separate bundle for React libs */
        /* new webpack.optimize.CommonsChunkPlugin({
