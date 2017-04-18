@@ -31,7 +31,7 @@ class AppContainer extends Component {
         <BrowserRouter>
            <Container styleName="AppContainer">
                <UiAppBar/>
-               <Link to="/home">Home</Link>
+               <Link to="/">Home</Link>
                <Link to="/blog">Blog</Link>
                <Button animated>
                    <Button.Content visible>Next</Button.Content>
@@ -40,8 +40,10 @@ class AppContainer extends Component {
                    </Button.Content>
                </Button>
                <Icon circular inverted color='teal' name='users' />
-               <Route path="/home" component={HomeContainer}/>
-               <Route path="/blog" component={BlogContainer}/>
+               <div>
+                   <Route exact path="/" component={HomeContainer}/>
+                   <Route exact path="/blog" component={BlogContainer}/>
+               </div>
            </Container>
         </BrowserRouter>
     );

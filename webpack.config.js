@@ -28,9 +28,7 @@ module.exports = {
         sourceMapFilename: '[name].[hash].map'
     },
     devServer: {
-        historyApiFallback:{
-            index:'src/index.html'
-        },
+        historyApiFallback: true,
     },
 
     resolve: {

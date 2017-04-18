@@ -12,9 +12,7 @@ import BlogContainer from './containers/blog/blog.container';
 
 ReactDOM.render((
             <Provider store={store}>
-                <BrowserRouter>
-                    <Route path="/" component={AppContainer} />
-                </BrowserRouter>
+                    <AppContainer/>
             </Provider>
     ),
     document.getElementById('root'));
