@@ -30,7 +30,7 @@ class AppContainer extends Component {
     return (
         <BrowserRouter>
            <Container styleName="AppContainer">
-                <UiAppBar/>
+               <UiAppBar/>
                <Link to="/home">Home</Link>
                <Link to="/blog">Blog</Link>
                <Button animated>
