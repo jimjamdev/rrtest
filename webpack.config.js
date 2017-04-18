@@ -27,6 +27,11 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         sourceMapFilename: '[name].[hash].map'
     },
+    devServer: {
+        historyApiFallback:{
+            index:'src/index.html'
+        },
+    },
 
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.jsx', '.scss', 'sass', '.css', '.less', '.json'],
