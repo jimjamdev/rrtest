@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import './blog.container.scss';
+import './blog.container.less';
 
 class BlogContainer extends Component {
     render() {
