@@ -1,18 +1,19 @@
 // LIBRARY IMPORTS
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 import CSSModules from 'react-css-modules';
 //import { connect } from 'react-redux';
 //import { toggleMenu } from './app.actions';
 
 // UI IMPORTS
 import Button from 'semantic-ui-react/dist/es/elements/Button';
+import Icon from 'semantic-ui-react/dist/es/elements/Icon';
 import Container from 'semantic-ui-react/dist/es/elements/Container';
 import UiAppBar from '../../components/ui/AppBar/AppBar';
 
 // CONTAINER IMPORTS
-import HomeContainer from '../home';
-import BlogContainer from '../blog';
+import HomeContainer from '../home/home.container';
+import BlogContainer from '../blog/blog.container';
 
 // STYLE IMPORTS
 import styles from './app.container.less';
@@ -27,13 +28,22 @@ class AppContainer extends Component {
 
     render() {
     return (
-       <Container styleName="AppContainer">
-            <UiAppBar/>
-           <Button animated>
-               <Button.Content visible>One</Button.Content>
-               <Button.Content hidden>Two</Button.Content>
-           </Button>
-       </Container>
+        <BrowserRouter>
+           <Container styleName="AppContainer">
+                <UiAppBar/>
+               <Link to="/home">Home</Link>
+               <Link to="/blog">Blog</Link>
+               <Button animated>
+                   <Button.Content visible>Next</Button.Content>
+                   <Button.Content hidden>
+                       <Icon name='right arrow' />
+                   </Button.Content>
+               </Button>
+               <Icon circular inverted color='teal' name='users' />
+               <Route path="/home" component={HomeContainer}/>
+               <Route path="/blog" component={BlogContainer}/>
+           </Container>
+        </BrowserRouter>
     );
   }
 }
