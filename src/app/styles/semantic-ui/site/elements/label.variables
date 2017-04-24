@@ -1,3 +1,6 @@
 /*******************************
     User Variable Overrides
 *******************************/
+.ui.label {
+    border-radius: 1rem !important;
+}

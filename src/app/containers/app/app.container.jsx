@@ -58,6 +58,9 @@ class AppContainer extends Component {
                    <Route exact path="/" component={HomeContainer}/>
                    <Route exact path="/blog" component={BlogContainer}/>
                </div>
+               <h1>Counter: { this.props.count }</h1>
+               <button onClick={() => Actions.decrement()}>Decrement</button>
+               <button onClick={() => Actions.increment()}>Increment</button>
            </Container>
         </BrowserRouter>
     );
