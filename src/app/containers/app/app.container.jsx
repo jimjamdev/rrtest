@@ -44,7 +44,7 @@ class AppContainer extends Component {
                </Button>
                <Icon circular inverted color='teal' name='users' />
                <h1>Counter: { this.props.app.count }</h1>
-               <p>Nav is {this.props.app.navOpen}</p>
+               <p>Nav is {this.props.app.navOpen.toString()}</p>
                <button onClick={() => AppState.decrement()}>Decrement on App</button>
                <button onClick={() => AppState.increment()}>Increment on App</button>
                <button onClick={() => AppState.toggleNav()}>Nav</button>
