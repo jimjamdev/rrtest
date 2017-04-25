@@ -8,12 +8,12 @@ export default State({
     },
     // Actions
     toggleNav (state) {
-        return { navOpen: !state.navOpen }
+        return { ...state, navOpen: !state.navOpen }
     },
     increment (state) {
-        return { count: ++state.count }
+        return { ...state, count: ++state.count }
     },
     decrement (state) {
-        return { count: --state.count }
+        return { ...state, count: --state.count }
     }
 })
