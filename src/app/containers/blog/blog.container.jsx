@@ -11,6 +11,7 @@ class BlogContainer extends Component {
                 <h1>Blog Page</h1>
                 <button onClick={() => AppState.decrement()}>Decrement on Blog</button>
                 <button onClick={() => AppState.increment()}>Increment on Blog</button>
+                <button onClick={() => AppState.toggleNav()}>Nav on Blog</button>
             </div>
         );
     }
