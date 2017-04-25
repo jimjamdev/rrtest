@@ -1,4 +1,4 @@
 import AppContainer from './app.container';
-import AppReducer from './app.state';
+import AppState from './app.state';
 
-export { AppContainer, AppReducer };
+export { AppContainer, AppState };

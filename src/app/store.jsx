@@ -3,17 +3,18 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { CreateJumpstateMiddleware } from 'jumpstate';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-import { AppReducer } from './containers';
+import { AppState } from './containers';
 
-const reducers = combineReducers({
-    AppReducer: AppReducer,
-});
+const states = {
+    app: AppState,
+};
 
 const store = createStore(
-    reducers,
+    combineReducers(states),
     composeWithDevTools(
-        applyMiddleware(),
-        CreateJumpstateMiddleware()
+        applyMiddleware(
+            CreateJumpstateMiddleware()
+        ),
     )
 );
 

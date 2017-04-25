@@ -1,10 +1,11 @@
 // LIBRARY IMPORTS
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import {Helmet} from "react-helmet";
 import CSSModules from 'react-css-modules';
-//import { connect } from 'react-redux';
-//import { toggleMenu } from './app.actions';
+
+import AppState from './app.state';
 
 // UI IMPORTS
 import Button from 'semantic-ui-react/dist/es/elements/Button';
@@ -22,17 +23,6 @@ import styles from './app.container.less';
 @CSSModules(styles)
 
 class AppContainer extends Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            someOptions: [
-                { key: '1', value: 'one', text: 'One'},
-                { key: '2', value: 'two', text: 'two'},
-                { key: '3', value: 'three', text: 'Three'}
-            ]
-        };
-    }
 
     render() {
     return (
@@ -53,24 +43,22 @@ class AppContainer extends Component {
                    </Button.Content>
                </Button>
                <Icon circular inverted color='teal' name='users' />
-               <Dropdown placeholder='State' fluid multiple search selection options={this.state.someOptions} />
                <div>
                    <Route exact path="/" component={HomeContainer}/>
                    <Route exact path="/blog" component={BlogContainer}/>
                </div>
-               <h1>Counter: { this.props.count }</h1>
-               <button onClick={() => Actions.decrement()}>Decrement</button>
-               <button onClick={() => Actions.increment()}>Increment</button>
+               <h1>Counter: { this.props.app.count }</h1>
+               <button onClick={() => AppState.decrement()}>Decrement</button>
+               <button onClick={() => AppState.increment()}>Increment</button>
            </Container>
         </BrowserRouter>
     );
   }
 }
 
-const mapStateToProps = (state) => {
-    return {
-       /* menuOpen: toggleMenu(state.menuOpen)*/
-    }
-};
 
-export default AppContainer;
+export default connect(state => {
+    return {
+        app: state.app
+    }
+})(AppContainer)
