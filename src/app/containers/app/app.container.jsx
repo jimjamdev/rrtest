@@ -43,13 +43,13 @@ class AppContainer extends Component {
                    </Button.Content>
                </Button>
                <Icon circular inverted color='teal' name='users' />
+               <h1>Counter: { this.props.app.count }</h1>
+               <button onClick={() => AppState.decrement()}>Decrement on App</button>
+               <button onClick={() => AppState.increment()}>Increment on App</button>
                <div>
                    <Route exact path="/" component={HomeContainer}/>
                    <Route exact path="/blog" component={BlogContainer}/>
                </div>
-               <h1>Counter: { this.props.app.count }</h1>
-               <button onClick={() => AppState.decrement()}>Decrement</button>
-               <button onClick={() => AppState.increment()}>Increment</button>
            </Container>
         </BrowserRouter>
     );
