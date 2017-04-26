@@ -4,7 +4,7 @@ import { State } from 'jumpstate';
 const data = [
     {
         "id": "1",
-        "name": "Some article 2",
+        "name": "Some article 1",
         "desc": "blah blah"
     },
     {
