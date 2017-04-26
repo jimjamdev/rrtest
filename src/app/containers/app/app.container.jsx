@@ -2,9 +2,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { BrowserRouter, Route, Link } from 'react-router-dom';
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
 import CSSModules from 'react-css-modules';
 
+// States
 import AppState from './app.state';
 
 // UI IMPORTS
@@ -23,7 +24,6 @@ import styles from './app.container.less';
 @CSSModules(styles)
 
 class AppContainer extends Component {
-
     render() {
     return (
         <BrowserRouter>
