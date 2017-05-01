@@ -49,6 +49,7 @@
     "webpack-dev-server": "^2.4.2"
   },
   "dependencies": {
+    "axios": "^0.16.1",
     "classnames": "^2.2.5",
     "immutability-helper": "^2.1.2",
     "jumpsuit": "^2.1.2",

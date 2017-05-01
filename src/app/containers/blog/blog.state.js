@@ -1,26 +1,43 @@
-import { State } from 'jumpstate';
-
-// Request from service>api
-const data = [
-    {
-        "id": "1",
-        "name": "Some article 1",
-        "desc": "blah blah"
-    },
-    {
-        "id": "2",
-        "name": "Some article 2",
-        "desc": "blah blah 2"
-    }
-]
+import {State, Effect, Actions} from 'jumpstate';
+import axios from 'axios';
 
 export default State({
     // Initial State
     initial: {
-        articles: data,
+        articles: [],
+        error : null,
+        loading: false
     },
-    // Actions
-    loadArticles (state) {
-        //return { ...state, articles: data }
+    // LOAD DATA
+    loadArticlesSuccess (state) {
+        return { ...state, articles: payload.data.results, error: null }
+    },
+    loadArticlesError (state) {
+        return { ...state, articles: [], error: payload.message }
+    },
+    showLoading (state) {
+        return {...state, loading: payload}
+    },
+    // ADD DATA
+    addArticle (state) {
+        return { ...state, articles: data }
+    },
+    // DELETE DATA
+    deleteArticle (state) {
+        return { ...state, articles: data }
+    },
+    deleteSelectedArticles (state) {
+        return { ...state, articles: data }
+    },
+    deleteAllArticles (state) {
+        return { ...state, articles: data }
     },
 })
+
+const loadArticles = Effect('loadArticles', (payload) => {
+    Actions.showLoading(true)
+    axios.get('https://randomuser.me/api/?results=50')
+        .then(Actions.loadArticlesSuccess)
+        .catch(Actions.loadArticlesError)
+        .finally(() => Actions.showLoading(false))
+});

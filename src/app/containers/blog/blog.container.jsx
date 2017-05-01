@@ -1,30 +1,42 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import { Actions } from 'jumpstate';
 
-import AppState from '../app/app.state';
-import BlogState from './blog.state';
+
+// UI IMPORTS
+import { Input, Button, Form, List } from 'semantic-ui-react';
 
 import './blog.container.less';
 
 class BlogContainer extends Component {
+
+    componentWillMount() {
+        return Actions.loadArticles();
+    }
+
+
     render() {
-        const articles = this.props.blog.articles.map((article) => <li key={article.id}>{article.name}</li>);
+        const { blog, loading } = this.props;
+        console.log(blog);
+        /*const listItems = loading ? <p>LOADING...</p>
+            : blog.map((blog) =>
+                <List.Item key={blog.login.md5} user={blog}/>
+            );*/
         return (
             <div>
                 <h1>Blog Page</h1>
-                <button onClick={() => AppState.decrement()}>Decrement on Blog</button>
-                <button onClick={() => AppState.increment()}>Increment on Blog</button>
-                <button onClick={() => AppState.toggleNav()}>Nav on Blog</button>
-                <ul>
-                    {articles}
-                </ul>
+                <Button secondary onClick={() => Actions.decrement()}>Decrement on Blog</Button>
+                <Button secondary onClick={() => Actions.increment()}>Increment on Blog</Button>
+                <Button secondary onClick={() => Actions.toggleNav()}>Nav on Blog</Button>
+                <List divided inverted relaxed>
+                    <Button color="red" onClick={ () => Actions.loadArticles() }>Load Articles</Button>
+                </List>
             </div>
         );
     }
 }
 export default connect(state => {
     return {
-        app: state.app,
         blog: state.blog
     }
 })(BlogContainer)
