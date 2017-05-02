@@ -16,7 +16,7 @@ export default State({
         return { ...state, articles: [], error: payload.message }
     },
     showLoading (state) {
-        return {...state}
+        return {...state, loading: true}
     },
     // ADD DATA
     addArticle (state) {

@@ -35,7 +35,8 @@ class BlogContainer extends Component {
                 <Button secondary onClick={() => Actions.increment()}>Increment on Blog</Button>
                 <Button secondary onClick={() => Actions.toggleNav()}>Nav on Blog</Button>
                 <List divided inverted relaxed>
-                    <Button color="red" onClick={ () => Actions.loadArticles() }>Load Articles</Button>
+                    <Button color="red" onClick={ () => Actions.loadArticles() }>Refresh Articles</Button>
+                    {/*{listItems}*/}
                 </List>
             </div>
         );
