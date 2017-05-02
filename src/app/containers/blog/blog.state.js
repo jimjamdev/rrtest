@@ -10,28 +10,26 @@ export default State({
     },
     // LOAD DATA
     loadArticlesSuccess (state, payload) {
-        return { ...state, articles: payload.data.results, error: null }
+        return {
+            ...state,
+            articles: payload.data.results,
+            error: null,
+            loading: false
+        }
     },
     loadArticlesError (state, payload) {
-        return { ...state, articles: [], error: payload.message }
+        return {
+            ...state,
+            articles: [],
+            error: payload.message
+        }
     },
     showLoading (state) {
-        return {...state, loading: true}
-    },
-    // ADD DATA
-    addArticle (state) {
-        return { ...state, articles: data }
-    },
-    // DELETE DATA
-    deleteArticle (state) {
-        return { ...state, articles: data }
-    },
-    deleteSelectedArticles (state) {
-        return { ...state, articles: data }
-    },
-    deleteAllArticles (state) {
-        return { ...state, articles: data }
-    },
+        return {
+            ...state,
+            loading: true
+        }
+    }
 })
 
 const loadArticles = Effect('loadArticles', (payload) => {
@@ -39,5 +37,4 @@ const loadArticles = Effect('loadArticles', (payload) => {
     axios.get('https://randomuser.me/api/?results=10')
         .then(Actions.loadArticlesSuccess)
         .catch(Actions.loadArticlesError)
-        //.finally(() => Actions.showLoading(false))
 });
