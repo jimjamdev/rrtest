@@ -12,7 +12,7 @@ class BlogContainer extends Component {
 
     constructor(props) {
         super(props);
-        console.log(props);
+        //console.log(props);
         //const articles = Actions.loadArticles();
     }
 
@@ -23,7 +23,7 @@ class BlogContainer extends Component {
 
     render() {
         const { blog, loading } = this.props;
-        //console.log(blog);
+        console.log(blog);
         /*const listItems = loading ? <p>LOADING...</p>
             : blog.map((blog) =>
                 <List.Item key={blog.login.md5} user={blog}/>

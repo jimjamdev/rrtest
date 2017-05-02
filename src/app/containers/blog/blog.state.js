@@ -9,14 +9,14 @@ export default State({
         loading: false
     },
     // LOAD DATA
-    loadArticlesSuccess (state) {
+    loadArticlesSuccess (state, payload) {
         return { ...state, articles: payload.data.results, error: null }
     },
-    loadArticlesError (state) {
+    loadArticlesError (state, payload) {
         return { ...state, articles: [], error: payload.message }
     },
     showLoading (state) {
-        return {...state, loading: payload}
+        return {...state}
     },
     // ADD DATA
     addArticle (state) {
@@ -39,5 +39,5 @@ const loadArticles = Effect('loadArticles', (payload) => {
     axios.get('https://randomuser.me/api/?results=50')
         .then(Actions.loadArticlesSuccess)
         .catch(Actions.loadArticlesError)
-        .finally(() => Actions.showLoading(false))
+        //.finally(() => Actions.showLoading(false))
 });
