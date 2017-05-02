@@ -36,7 +36,7 @@ export default State({
 
 const loadArticles = Effect('loadArticles', (payload) => {
     Actions.showLoading(true)
-    axios.get('https://randomuser.me/api/?results=50')
+    axios.get('https://randomuser.me/api/?results=10')
         .then(Actions.loadArticlesSuccess)
         .catch(Actions.loadArticlesError)
         //.finally(() => Actions.showLoading(false))

@@ -24,10 +24,10 @@ class BlogContainer extends Component {
     render() {
         const { blog, loading } = this.props;
         console.log(blog);
-        /*const listItems = loading ? <p>LOADING...</p>
-            : blog.map((blog) =>
-                <List.Item key={blog.login.md5} user={blog}/>
-            );*/
+        const listItems = loading ? <p>LOADING...</p>
+            : blog.articles.map((blog) =>
+                <List.Item key={blog.login.username}>{blog.login.username}</List.Item>
+            );
         return (
             <div>
                 <h1>Blog Page</h1>
@@ -36,7 +36,7 @@ class BlogContainer extends Component {
                 <Button secondary onClick={() => Actions.toggleNav()}>Nav on Blog</Button>
                 <List divided inverted relaxed>
                     <Button color="red" onClick={ () => Actions.loadArticles() }>Refresh Articles</Button>
-                    {/*{listItems}*/}
+                    {listItems}
                 </List>
             </div>
         );
