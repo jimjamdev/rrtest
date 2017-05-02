@@ -10,6 +10,11 @@ import './blog.container.less';
 
 class BlogContainer extends Component {
 
+    constructor(props) {
+        super(props);
+        //const articles = Actions.loadArticles();
+    }
+
     componentWillMount() {
         return Actions.loadArticles();
     }
