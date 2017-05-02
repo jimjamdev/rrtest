@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b2074688-83ee-45c6-a607-df912a12f2ff" name="Default" comment="tabs">
+    <list default="true" id="b2074688-83ee-45c6-a607-df912a12f2ff" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/containers/blog/blog.container.jsx" afterPath="$PROJECT_DIR$/src/app/containers/blog/blog.container.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/containers/blog/blog.state.js" afterPath="$PROJECT_DIR$/src/app/containers/blog/blog.state.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -31,10 +30,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="blog.state.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="blog.state.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/containers/blog/blog.state.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="508">
+            <state relative-caret-position="664">
               <caret line="30" column="6" lean-forward="true" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="6" />
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
@@ -43,11 +42,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="blog.container.jsx" pinned="false" current-in-tab="false">
+      <file leaf-file-name="blog.container.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/containers/blog/blog.container.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="23" column="14" lean-forward="true" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+            <state relative-caret-position="404">
+              <caret line="25" column="26" lean-forward="true" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
                 <element signature="e#134#196#0" expanded="true" />
@@ -139,8 +138,8 @@
         <option value="$PROJECT_DIR$/src/app/containers/blog/index.jsx" />
         <option value="$PROJECT_DIR$/webpack.config.js" />
         <option value="$PROJECT_DIR$/src/app/containers/app/app.container.jsx" />
-        <option value="$PROJECT_DIR$/src/app/containers/blog/blog.container.jsx" />
         <option value="$PROJECT_DIR$/src/app/containers/blog/blog.state.js" />
+        <option value="$PROJECT_DIR$/src/app/containers/blog/blog.container.jsx" />
       </list>
     </option>
   </component>
@@ -846,11 +845,18 @@
       <option name="project" value="LOCAL" />
       <updated>1493735631706</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="list working">
+      <created>1493742912602</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1493742912602</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92799000" />
+    <option name="totallyTimeSpent" value="92910000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -919,7 +925,8 @@
     <MESSAGE value="devserver" />
     <MESSAGE value="super" />
     <MESSAGE value="works" />
-    <option name="LAST_COMMIT_MESSAGE" value="works" />
+    <MESSAGE value="list working" />
+    <option name="LAST_COMMIT_MESSAGE" value="list working" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1178,23 +1185,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/containers/blog/blog.container.jsx">
+    <entry file="file://$PROJECT_DIR$/src/app/containers/blog/blog.state.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="23" column="14" lean-forward="true" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+        <state relative-caret-position="664">
+          <caret line="30" column="6" lean-forward="true" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="6" />
           <folding>
-            <element signature="e#0#41#0" expanded="true" />
-            <element signature="e#134#196#0" expanded="true" />
+            <element signature="e#0#49#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/containers/blog/blog.state.js">
+    <entry file="file://$PROJECT_DIR$/src/app/containers/blog/blog.container.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="508">
-          <caret line="30" column="6" lean-forward="true" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="6" />
+        <state relative-caret-position="404">
+          <caret line="25" column="26" lean-forward="true" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
           <folding>
-            <element signature="e#0#49#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#134#196#0" expanded="true" />
           </folding>
         </state>
       </provider>

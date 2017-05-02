@@ -26,7 +26,7 @@ class BlogContainer extends Component {
         console.log(blog);
         const listItems = loading ? <p>LOADING...</p>
             : blog.articles.map((blog) =>
-                <List.Item key={blog.login.username}>{blog.login.username}</List.Item>
+                <List.Item key={blog.login.username}>{blog.name.title} {blog.name.first} {blog.name.last}</List.Item>
             );
         return (
             <div>
