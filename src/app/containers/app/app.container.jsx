@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { Actions } from 'jumpstate';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import { Helmet } from "react-helmet";
-import CSSModules from 'react-css-modules';
+import styled from 'styled-components';
 
 // UI IMPORTS
 import Button from 'semantic-ui-react/dist/es/elements/Button';
@@ -12,19 +12,23 @@ import Icon from 'semantic-ui-react/dist/es/elements/Icon';
 import Container from 'semantic-ui-react/dist/es/elements/Container';
 import Dropdown from 'semantic-ui-react/dist/es/modules/Dropdown';
 import Menu from 'semantic-ui-react/dist/es/collections/Menu';
-import UiAppBar from '../../components/ui/AppBar/AppBar';
+import AppBar from '../../components/AppBar/AppBar';
 
 // CONTAINER IMPORTS
 import { HomeContainer } from '../home';
 import { BlogContainer } from '../blog';
 
-// STYLE IMPORTS
-import styles from './app.container.less';
-@CSSModules(styles)
+// STYLES
+
+const AppContainerStyle = styled.main`
+  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+`;
+
 
 class AppContainer extends Component {
     render() {
     return (
+        <AppContainerStyle>
         <BrowserRouter>
            <Container styleName="AppContainer">
                <Helmet>
@@ -32,7 +36,9 @@ class AppContainer extends Component {
                    <title>React Test</title>
                    <link rel="canonical" href="http://domain.com/" />
                </Helmet>
-               <UiAppBar/>
+               <AppBar>
+                   Test
+               </AppBar>
                <Menu>
                    <Menu.Item>
                        <Link to="/">Home</Link>
@@ -57,6 +63,7 @@ class AppContainer extends Component {
                </div>
            </Container>
         </BrowserRouter>
+        </AppContainerStyle>
     );
   }
 }
