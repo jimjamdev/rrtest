@@ -21,6 +21,7 @@ export default State({
         return {
             ...state,
             articles: [],
+            loading: false,
             error: payload.message
         }
     },
