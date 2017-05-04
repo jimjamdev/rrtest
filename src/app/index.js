@@ -16,14 +16,17 @@ injectGlobal`
     line-height: 1.5;
    }
   body {
-    margin: 0;
+    display: flex;
     height: 100%;
-    min-height: 100%;
-    background: #efefef;
+    position: relative;
+    margin:0; padding: 0;
+    overflow: hidden;
   }
   #root {
-    height: 100%;
-    min-height: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
   }
 `
 

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
+import Title from '../../components/Title/Title';
+
 class HomeContainer extends Component {
     render() {
         return (
-            <div>
-                <h1>Home Page</h1>
-            </div>
+            <Title>Home</Title>
         );
     }
 }

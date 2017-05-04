@@ -5,6 +5,7 @@ import { Actions } from 'jumpstate';
 
 // UI IMPORTS
 import { Input, Button, Form, List } from 'semantic-ui-react';
+import Title from '../../components/Title/Title';
 
 import './blog.container.less';
 
@@ -24,7 +25,7 @@ class BlogContainer extends Component {
             );
         return (
             <div>
-                <h1>Blog Page</h1>
+                <Title>Blog</Title>
                 <Button secondary onClick={() => Actions.decrement()}>Decrement on Blog</Button>
                 <Button secondary onClick={() => Actions.increment()}>Increment on Blog</Button>
                 <Button secondary onClick={() => Actions.toggleNav()}>Nav on Blog</Button>

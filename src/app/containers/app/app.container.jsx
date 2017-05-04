@@ -14,6 +14,7 @@ import Dropdown from 'semantic-ui-react/dist/es/modules/Dropdown';
 import Menu from 'semantic-ui-react/dist/es/collections/Menu';
 import AppBar from '../../components/AppBar/AppBar';
 import Card from '../../components/Card/Card';
+import Title from '../../components/Title/Title';
 
 // CONTAINER IMPORTS
 import { HomeContainer } from '../home';
@@ -22,8 +23,12 @@ import { BlogContainer } from '../blog';
 // STYLES
 
 const AppContainerStyle = styled.main`
-  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-family: ${({ theme }) => theme.base.font };
   background: ${({ theme }) => theme.base.background };
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-shrink: 0;
 `;
 
 
@@ -39,7 +44,7 @@ class AppContainer extends Component {
                    <link rel="canonical" href="http://domain.com/" />
                </Helmet>
                <AppBar textColor="white" height="3.3rem">
-                   App
+                   <Title>React Redux Jumpstate Test</Title>
                </AppBar>
                <AppBar color="white" textColor="darkGrey">
                    Title { this.props.app.count } {this.props.app.navOpen.toString()}
@@ -52,7 +57,6 @@ class AppContainer extends Component {
                        <Link to="/blog">Blog</Link>
                    </Menu.Item>
                </Menu>
-               <h1>React Redux Jumpstate Test</h1>
                <Card>
                    content...
                </Card>

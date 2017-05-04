@@ -2,7 +2,7 @@ const theme = {
     base: {
         background: '#efefef',
         textColor: '#444',
-        font: 'Arial'
+        font: "'Roboto', 'Helvetica Neue', Arial, Helvetica, sans-serif",
     },
     appBar: {
       background: 'lightseagreen'
