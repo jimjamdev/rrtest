@@ -8,27 +8,32 @@ import styled from 'styled-components';
 const AppBarStyle = styled.header`
   display: flex;
   align-items: center;
+  color: ${( { textColor, theme } ) => theme && textColor ? theme.color[ textColor ] : theme.base.textColor };
   font-size: inherit;
-  min-height: 3.8rem;
-  padding: 0 .5rem;
-  background: lightseagreen;
+  min-height: ${( { height } ) => height };
+  padding: 0 1rem;
+  background: ${( { color, theme } ) => theme && color ? theme.color[ color ] : theme.appBar.background };
   box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
 `;
 
 
-class AppBar extends Component {
-
-    render() {
-        return (
-            <AppBarStyle>
-                <h1>Affectli</h1>
-            </AppBarStyle>
-        );
-    }
+const AppBar = (props) => {
+    return (
+        <AppBarStyle {...props}>
+            {props.children}
+        </AppBarStyle>
+    );
 }
 
 AppBar.propTypes = {
+    textColor: PropTypes.string,
+    height: PropTypes.string,
+    color: PropTypes.string,
     children: PropTypes.string
 };
+
+AppBar.defaultProps = {
+    height: '3.3rem'
+}
 
 export default AppBar;

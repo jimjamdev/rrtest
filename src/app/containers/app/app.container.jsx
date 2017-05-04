@@ -22,6 +22,7 @@ import { BlogContainer } from '../blog';
 
 const AppContainerStyle = styled.main`
   font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  background: ${({ theme }) => theme.base.background };
 `;
 
 
@@ -36,8 +37,11 @@ class AppContainer extends Component {
                    <title>React Test</title>
                    <link rel="canonical" href="http://domain.com/" />
                </Helmet>
-               <AppBar>
-                   Test
+               <AppBar color="primary" textColor="white" height="3.3rem">
+                   App
+               </AppBar>
+               <AppBar color="white" textColor="darkGrey">
+                   Options
                </AppBar>
                <Menu>
                    <Menu.Item>
@@ -57,6 +61,7 @@ class AppContainer extends Component {
                <Button primary onClick={() => Actions.decrement()}>Decrement on App</Button>
                <Button primary onClick={() => Actions.increment()}>Increment on App</Button>
                <Button primary onClick={() => Actions.toggleNav()}>Nav</Button>
+               <Button color="red" onClick={ () => Actions.loadArticles() }>Refresh Articles</Button>
                <div>
                    <Route exact path="/" component={HomeContainer}/>
                    <Route exact path="/blog" component={BlogContainer}/>
