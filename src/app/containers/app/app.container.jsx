@@ -37,11 +37,11 @@ class AppContainer extends Component {
                    <title>React Test</title>
                    <link rel="canonical" href="http://domain.com/" />
                </Helmet>
-               <AppBar color="primary" textColor="white" height="3.3rem">
+               <AppBar textColor="white" height="3.3rem">
                    App
                </AppBar>
                <AppBar color="white" textColor="darkGrey">
-                   Options
+                   Title { this.props.app.count } {this.props.app.navOpen.toString()}
                </AppBar>
                <Menu>
                    <Menu.Item>
@@ -49,12 +49,6 @@ class AppContainer extends Component {
                    </Menu.Item>
                    <Menu.Item>
                        <Link to="/blog">Blog</Link>
-                   </Menu.Item>
-                   <Menu.Item>
-                       Count: { this.props.app.count }
-                   </Menu.Item>
-                   <Menu.Item>
-                       Nav: {this.props.app.navOpen.toString()}
                    </Menu.Item>
                </Menu>
                <h1>React Redux Jumpstate Test</h1>

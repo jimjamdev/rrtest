@@ -5,7 +5,7 @@ import styled from 'styled-components';
 // UI IMPORTS
 
 // STYLE IMPORTS
-const AppBarStyle = styled.header`
+const CardStyle = styled.aside`
   display: flex;
   align-items: center;
   color: ${( { textColor, theme } ) => theme && textColor ? theme.color[ textColor ] : theme.base.textColor };
@@ -17,23 +17,23 @@ const AppBarStyle = styled.header`
 `;
 
 
-const AppBar = (props) => {
+const Card = (props) => {
     return (
-        <AppBarStyle {...props}>
+        <CardStyle {...props}>
             {props.children}
-        </AppBarStyle>
+        </CardStyle>
     );
 }
 
-AppBar.propTypes = {
+Card.propTypes = {
     textColor: PropTypes.string,
     height: PropTypes.string,
     color: PropTypes.string,
     children: PropTypes.string
 };
 
-AppBar.defaultProps = {
+Card.defaultProps = {
     height: '3.3rem'
 }
 
-export default AppBar;
+export default Card;
