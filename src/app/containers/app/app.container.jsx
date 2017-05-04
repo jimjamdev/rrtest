@@ -30,7 +30,7 @@ class AppContainer extends Component {
     return (
         <AppContainerStyle>
         <BrowserRouter>
-           <Container styleName="AppContainer">
+           <Container>
                <Helmet>
                    <meta charSet="utf-8" />
                    <title>React Test</title>
