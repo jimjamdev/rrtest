@@ -7,12 +7,9 @@ import styled from 'styled-components';
 // STYLE IMPORTS
 const CardStyle = styled.aside`
   display: flex;
-  align-items: center;
-  color: ${( { textColor, theme } ) => theme && textColor ? theme.color[ textColor ] : theme.base.textColor };
   font-size: inherit;
-  min-height: ${( { height } ) => height };
-  padding: 0 1rem;
-  background: ${( { color, theme } ) => theme && color ? theme.color[ color ] : theme.appBar.background };
+  padding: 1rem;
+  background:  ${( { theme } ) => theme.widget.background };
   box-shadow: ${( { theme } ) => theme.shadow.z1 };
 `;
 
@@ -26,10 +23,8 @@ const Card = (props) => {
 }
 
 Card.propTypes = {
-    textColor: PropTypes.string,
-    height: PropTypes.string,
-    color: PropTypes.string,
-    children: PropTypes.string
+    title: PropTypes.string,
+    image: PropTypes.string,
 };
 
 Card.defaultProps = {

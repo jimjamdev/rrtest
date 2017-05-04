@@ -13,6 +13,7 @@ import Container from 'semantic-ui-react/dist/es/elements/Container';
 import Dropdown from 'semantic-ui-react/dist/es/modules/Dropdown';
 import Menu from 'semantic-ui-react/dist/es/collections/Menu';
 import AppBar from '../../components/AppBar/AppBar';
+import Card from '../../components/Card/Card';
 
 // CONTAINER IMPORTS
 import { HomeContainer } from '../home';
@@ -52,6 +53,9 @@ class AppContainer extends Component {
                    </Menu.Item>
                </Menu>
                <h1>React Redux Jumpstate Test</h1>
+               <Card>
+                   content...
+               </Card>
                <Button primary onClick={() => Actions.decrement()}>Decrement on App</Button>
                <Button primary onClick={() => Actions.increment()}>Increment on App</Button>
                <Button primary onClick={() => Actions.toggleNav()}>Nav</Button>
