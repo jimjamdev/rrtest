@@ -7,14 +7,12 @@ import { Helmet } from "react-helmet";
 import styled from 'styled-components';
 
 // UI IMPORTS
+import {Col, Row} from 'react-styled-flexboxgrid'
 import Button from 'semantic-ui-react/dist/es/elements/Button';
-import Icon from 'semantic-ui-react/dist/es/elements/Icon';
-import Container from 'semantic-ui-react/dist/es/elements/Container';
-import Dropdown from 'semantic-ui-react/dist/es/modules/Dropdown';
-import Menu from 'semantic-ui-react/dist/es/collections/Menu';
 import AppBar from '../../components/AppBar/AppBar';
 import Card from '../../components/Card/Card';
 import Title from '../../components/Title/Title';
+import Loader from '../../components/Loader/Loader';
 
 // CONTAINER IMPORTS
 import { HomeContainer } from '../home';
@@ -35,9 +33,8 @@ const AppContainerStyle = styled.main`
 class AppContainer extends Component {
     render() {
     return (
-        <AppContainerStyle>
         <BrowserRouter>
-           <Container>
+            <AppContainerStyle>
                <Helmet>
                    <meta charSet="utf-8" />
                    <title>React Test</title>
@@ -47,19 +44,19 @@ class AppContainer extends Component {
                    <Title>React Redux Jumpstate Test</Title>
                </AppBar>
                <AppBar color="white" textColor="darkGrey">
-                   Title { this.props.app.count } {this.props.app.navOpen.toString()}
+                   Title { this.props.app.count } {this.props.app.navOpen.toString()} <Loader/>
                </AppBar>
-               <Menu>
-                   <Menu.Item>
-                       <Link to="/">Home</Link>
-                   </Menu.Item>
-                   <Menu.Item>
-                       <Link to="/blog">Blog</Link>
-                   </Menu.Item>
-               </Menu>
-               <Card>
-                   content...
-               </Card>
+                <div>
+                    <Link to="/">Home</Link>
+                    <Link to="/blog">Blog</Link>
+                </div>
+                    <Row>
+                        <Col xs={12} md={3}>
+                            <Card>
+                                content...
+                            </Card>
+                        </Col>
+                    </Row>
                <Button primary onClick={() => Actions.decrement()}>Decrement on App</Button>
                <Button primary onClick={() => Actions.increment()}>Increment on App</Button>
                <Button primary onClick={() => Actions.toggleNav()}>Nav</Button>
@@ -68,9 +65,8 @@ class AppContainer extends Component {
                    <Route exact path="/" component={HomeContainer}/>
                    <Route exact path="/blog" component={BlogContainer}/>
                </div>
-           </Container>
+            </AppContainerStyle>
         </BrowserRouter>
-        </AppContainerStyle>
     );
   }
 }

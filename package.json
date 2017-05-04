@@ -60,6 +60,7 @@
     "react-helmet": "^5.0.3",
     "react-redux": "^5.0.3",
     "react-router-dom": "^4.0.0",
+    "react-styled-flexboxgrid": "^1.0.2",
     "redux": "^3.6.0",
     "semantic-ui-less": "^2.2.10",
     "semantic-ui-react": "^0.68.0",

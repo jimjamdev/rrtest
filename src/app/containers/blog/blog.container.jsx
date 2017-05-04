@@ -4,10 +4,8 @@ import { Actions } from 'jumpstate';
 
 
 // UI IMPORTS
-import { Input, Button, Form, List } from 'semantic-ui-react';
+import Button from 'semantic-ui-react/dist/es/elements/Button';
 import Title from '../../components/Title/Title';
-
-import './blog.container.less';
 
 class BlogContainer extends Component {
 
@@ -21,7 +19,7 @@ class BlogContainer extends Component {
         console.log(blog);
         const listItems = loading ? <p>LOADING...</p>
             : blog.articles.map((blog) =>
-                <List.Item key={blog.login.username}>{blog.name.title} {blog.name.first} {blog.name.last}</List.Item>
+                <li key={blog.login.username}>{blog.name.title} {blog.name.first} {blog.name.last}</li>
             );
         return (
             <div>
@@ -29,10 +27,10 @@ class BlogContainer extends Component {
                 <Button secondary onClick={() => Actions.decrement()}>Decrement on Blog</Button>
                 <Button secondary onClick={() => Actions.increment()}>Increment on Blog</Button>
                 <Button secondary onClick={() => Actions.toggleNav()}>Nav on Blog</Button>
-                <List divided inverted relaxed>
+                <ul divided inverted relaxed>
                     <Button color="red" onClick={ () => Actions.loadArticles() }>Refresh Articles</Button>
                     {listItems}
-                </List>
+                </ul>
             </div>
         );
     }

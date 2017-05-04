@@ -46,7 +46,7 @@ module.exports = {
                 //exclude: /node_modules/,
                 loader: 'babel-loader',
                 options: {
-                    sourceMaps: true
+                    /*sourceMaps: true*/
                 }
             },
             /*{
@@ -63,7 +63,7 @@ module.exports = {
                         loader: 'css-loader',
                         options: {
                             modules: true,
-                            sourceMap: true,
+                            /*sourceMap: true,*/
                             importLoaders: 1,
                             localIdentName: "[name]--[local]--[hash:base64:8]"
                         }
@@ -80,7 +80,7 @@ module.exports = {
                         loader: 'style-loader',
                         options: {
                             modules: true,
-                            sourceMap: true,
+                            /*sourceMap: true,*/
                             importLoaders: 1,
                             localIdentName: "[name]--[local]--[hash:base64:8]"
                         }

@@ -29,7 +29,10 @@ AppBar.propTypes = {
     textColor: PropTypes.string,
     height: PropTypes.string,
     color: PropTypes.string,
-    children: PropTypes.string
+    children: React.PropTypes.oneOfType([
+        React.PropTypes.arrayOf(React.PropTypes.node),
+        React.PropTypes.node
+    ])
 };
 
 AppBar.defaultProps = {
