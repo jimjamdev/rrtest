@@ -8,12 +8,9 @@ import styled, { keyframes }  from 'styled-components';
 
 const rotation = keyframes`
    0% {
-    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
-
   100% {
-    -webkit-transform: rotate(270deg);
     transform: rotate(270deg);
   }
 `
@@ -34,32 +31,23 @@ const turn = keyframes`
     stroke: yellow;
   }
 `
-const LoaderBox = styled.div`
-  .spinner {
-       animation: #{rotation} 1.4s linear infinite;
-   }
-  .circle {
-      stroke-dasharray: 187;
-      stroke-dashoffset: 0;
-      -webkit-transform-origin: center;
-      -ms-transform-origin: center;
-      transform-origin: center;
-      -webkit-animation: turn 1.4s ease-in-out infinite;
-      animation: #{turn} 1.4s ease-in-out infinite;
-  }
-  svg {
-    stroke:#e51c23;
-  }
+const Spinner = styled.svg`
+    animation: ${rotation} 1.4s linear infinite;
+`
+
+const Circle = styled.circle`
+     stroke-dasharray: 187;
+     stroke-dashoffset: 0;
+     transform-origin: center;
+     animation: ${turn} 1.4s ease-in-out infinite;
 `
 
 
 const Loader = (props) => {
     return (
-        <LoaderBox>
-            <svg className="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
-                <circle className="circle" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
-            </svg>
-        </LoaderBox>
+        <Spinner width="65px" height="65px" viewBox="0 0 66 66" stroke="#e51c23;" xmlns="http://www.w3.org/2000/svg">
+            <Circle fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></Circle>
+        </Spinner>
     );
 }
 

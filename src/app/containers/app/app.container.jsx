@@ -44,7 +44,7 @@ class AppContainer extends Component {
                    <Title>React Redux Jumpstate Test</Title>
                </AppBar>
                <AppBar color="white" textColor="darkGrey">
-                   Title { this.props.app.count } {this.props.app.navOpen.toString()} <Loader/>
+                   Title { this.props.app.count } {this.props.app.navOpen.toString()}
                </AppBar>
                 <div>
                     <Link to="/">Home</Link>
@@ -56,7 +56,23 @@ class AppContainer extends Component {
                                 content...
                             </Card>
                         </Col>
+                        <Col xs={12} md={3}>
+                            <Card>
+                                content...
+                            </Card>
+                        </Col>
+                        <Col xs={12} md={3}>
+                            <Card>
+                                content...
+                            </Card>
+                        </Col>
+                        <Col xs={12} md={3}>
+                            <Card>
+                                content...
+                            </Card>
+                        </Col>
                     </Row>
+                <Loader/>
                <Button primary onClick={() => Actions.decrement()}>Decrement on App</Button>
                <Button primary onClick={() => Actions.increment()}>Increment on App</Button>
                <Button primary onClick={() => Actions.toggleNav()}>Nav</Button>
