@@ -7,7 +7,7 @@ import { Helmet } from "react-helmet";
 import styled from 'styled-components';
 
 // UI IMPORTS
-import {Col, Row} from 'react-styled-flexboxgrid'
+import { Col, Row } from 'react-styled-flexboxgrid'
 import Button from 'semantic-ui-react/dist/es/elements/Button';
 import AppBar from '../../components/AppBar/AppBar';
 import Card from '../../components/Card/Card';
