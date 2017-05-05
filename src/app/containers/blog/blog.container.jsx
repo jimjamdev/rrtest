@@ -6,6 +6,7 @@ import { Actions } from 'jumpstate';
 // UI IMPORTS
 import Button from 'semantic-ui-react/dist/es/elements/Button';
 import Title from '../../components/Title/Title';
+import Loader from '../../components/Loader/Loader';
 
 class BlogContainer extends Component {
 
@@ -17,7 +18,7 @@ class BlogContainer extends Component {
     render() {
         const { blog, loading } = this.props;
         console.log(blog);
-        const listItems = loading ? <p>LOADING...</p>
+        const listItems = loading ? <Loader/>
             : blog.articles.map((blog) =>
                 <li key={blog.login.username}>{blog.name.title} {blog.name.first} {blog.name.last}</li>
             );
