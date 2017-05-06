@@ -4,7 +4,7 @@ import { Actions } from 'jumpstate';
 
 
 // UI IMPORTS
-import Button from 'semantic-ui-react/dist/es/elements/Button';
+import Button from '../../components/Button/Button';
 import Title from '../../components/Title/Title';
 import Loader from '../../components/Loader/Loader';
 
@@ -25,9 +25,9 @@ class BlogContainer extends Component {
         return (
             <div>
                 <Title>Blog</Title>
-                <Button secondary onClick={() => Actions.decrement()}>Decrement on Blog</Button>
-                <Button secondary onClick={() => Actions.increment()}>Increment on Blog</Button>
-                <Button secondary onClick={() => Actions.toggleNav()}>Nav on Blog</Button>
+                <Button onClick={() => Actions.decrement()}>Decrement on Blog</Button>
+                <Button onClick={() => Actions.increment()}>Increment on Blog</Button>
+                <Button onClick={() => Actions.toggleNav()}>Nav on Blog</Button>
                 <ul divided inverted relaxed>
                     <Button color="red" onClick={ () => Actions.loadArticles() }>Refresh Articles</Button>
                     {listItems}

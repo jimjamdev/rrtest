@@ -8,7 +8,7 @@ import styled from 'styled-components';
 
 // UI IMPORTS
 import { Col, Row } from 'react-styled-flexboxgrid'
-import Button from 'semantic-ui-react/dist/es/elements/Button';
+import Button from '../../components/Button/Button';
 import AppBar from '../../components/AppBar/AppBar';
 import Card from '../../components/Card/Card';
 import Title from '../../components/Title/Title';
@@ -23,10 +23,9 @@ import { BlogContainer } from '../blog';
 const AppContainerStyle = styled.main`
   font-family: ${({ theme }) => theme.base.font };
   background: ${({ theme }) => theme.base.background };
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  flex-shrink: 0;
+  display: block
+  height: 100%;
+  min-height: 100%;
 `;
 
 
@@ -73,10 +72,10 @@ class AppContainer extends Component {
                         </Col>
                     </Row>
                 <Loader/>
-               <Button primary onClick={() => Actions.decrement()}>Decrement on App</Button>
-               <Button primary onClick={() => Actions.increment()}>Increment on App</Button>
-               <Button primary onClick={() => Actions.toggleNav()}>Nav</Button>
-               <Button color="red" onClick={ () => Actions.loadArticles() }>Refresh Articles</Button>
+               <Button color="primary" onClick={() => Actions.decrement()}>Decrement on App</Button>
+               <Button color="secondary" onClick={() => Actions.increment()}>Increment on App</Button>
+               <Button color="warning" loading onClick={() => Actions.toggleNav()}>Nav</Button>
+               <Button color="red" rounded onClick={ () => Actions.loadArticles() }>Refresh Articles</Button>
                <div>
                    <Route exact path="/" component={HomeContainer}/>
                    <Route exact path="/blog" component={BlogContainer}/>

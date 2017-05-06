@@ -12,15 +12,16 @@ const theme = {
         iconColor: 'blue'
     },
     color: {
-        primary: 'lightseagreen',
-        secondary: 'blue',
-        good: 'green',
-        info: 'blue',
-        warning: 'yellow',
-        alert: 'orange',
-        error: 'red',
+        primary: '#8BC34A',
+        secondary: '#03A9F4',
+        good: '#4CAF50',
+        info: '#2196F3',
+        warning: '#FFC107',
+        alert: '#FF9800',
+        error: '#f44336',
         white: 'white',
-        darkGrey: '#444'
+        darkGrey: '#444',
+        red: '#f44336'
     },
     shadow: {
         z1: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',

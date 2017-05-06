@@ -1,17 +1,12 @@
-// LIBRARY IMPORTS
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled, { keyframes }  from 'styled-components';
-// UI IMPORTS
-
-// STYLE IMPORTS
 
 const rotate = keyframes`
    100% {
         transform: rotate(360deg);
     }
 `
-
 const dash = keyframes`
  0% {
         stroke-dasharray: 1, 200;
@@ -26,6 +21,7 @@ const dash = keyframes`
         stroke-dashoffset: -124px;
     }
 `
+
 
 const smallloadercolors = keyframes`
 100%,
@@ -43,10 +39,10 @@ const smallloadercolors = keyframes`
         stroke: #e01616;
     }
 `
-
-
 const Spinner = styled.div`
     position: relative;
+    display: inline-block;
+    text-align: center;
     width: 20px;
     height: 20px;
     &:before {
@@ -55,7 +51,6 @@ const Spinner = styled.div`
         padding-top: 100%;
     }
 `
-
 const Circle = styled.svg`
     animation: ${rotate} 2s linear infinite;
     height: 100%;
@@ -71,7 +66,8 @@ const Circle = styled.svg`
 const Path = styled.circle`
     stroke-dasharray: 1, 200;
     stroke-dashoffset: 0;
-    animation: ${dash} 1.5s ease-in-out infinite, ${smallloadercolors} 6s ease-in-out infinite;
+    stroke: ${( { color, theme } ) => theme && color ? theme.color[ color ] : 'red' };
+    animation: ${dash} 1.5s ease-in-out infinite, ${( { color, theme } ) => theme && color ? '' : `${smallloadercolors} 6s ease-in-out infinite` };
     stroke-linecap: round;
 `
 
@@ -79,7 +75,7 @@ const Path = styled.circle`
 class Loader extends Component {
 
     getLoaderStyle() {
-        const radius = this.props.radius || 20;
+        const radius = this.props.radius || 50;
         return {
             height: radius+"px",
             width: radius+"px"
@@ -87,11 +83,12 @@ class Loader extends Component {
     }
 
     getStrokeWidth() {
-        const strokeWidth = this.props.strokeWidth || 3;
+        const strokeWidth = this.props.strokeWidth || 4;
         return strokeWidth;
     }
 
     render() {
+
         return (
             <Spinner style={this.getLoaderStyle()}>
                 <Circle viewBox="25 25 50 50">
@@ -101,5 +98,11 @@ class Loader extends Component {
         );
     }
 }
+
+Loader.propTypes = {
+    radius: PropTypes.string,
+    strokeWidth: PropTypes.string,
+    color: PropTypes.string,
+};
 
 export default Loader;
