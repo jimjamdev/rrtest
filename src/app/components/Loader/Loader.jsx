@@ -63,14 +63,14 @@ const Circle = styled.svg`
     right: 0;
     margin: auto;
 `
+
 const Path = styled.circle`
     stroke-dasharray: 1, 200;
     stroke-dashoffset: 0;
-    stroke: ${( { color, theme } ) => theme && color ? theme.color[ color ] : 'red' };
-    animation: ${dash} 1.5s ease-in-out infinite, ${( { color, theme } ) => theme && color ? '' : `${smallloadercolors} 6s ease-in-out infinite` };
+    stroke: ${( { color, theme } ) => theme && color ? theme.color[ color ] : 'transparent' };
+    animation: ${dash} 1.5s ease-in-out infinite, ${( { color, theme } ) => theme && color ? null : `${smallloadercolors} 6s ease-in-out infinite` };
     stroke-linecap: round;
 `
-
 
 class Loader extends Component {
 

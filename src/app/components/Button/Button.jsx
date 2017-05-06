@@ -47,7 +47,7 @@ const Button = (props) => {
     if (loading) {
         return (
             <ButtonStyle {...props}>
-                <Loader radius="15" strokeWidth="3" color="white" />
+                <Loader radius="12" strokeWidth="3" color="white" />
             </ButtonStyle>
         )
     }
