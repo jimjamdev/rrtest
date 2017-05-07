@@ -1,6 +1,6 @@
 // LIBRARY IMPORTS
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
+// import PropTypes from 'prop-types';
 import styled from 'styled-components';
 // UI IMPORTS
 
@@ -21,7 +21,7 @@ const ListItemStyle = styled.li`
 
 const ListItem = (props) => {
     return (
-        <ListItemStyle>
+        <ListItemStyle {...props}>
             {props.children}
         </ListItemStyle>
     );

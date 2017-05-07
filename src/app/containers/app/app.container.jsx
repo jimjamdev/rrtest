@@ -12,7 +12,9 @@ import AppContent from './components/content';
 
 import AppBar from '../../components/AppBar/AppBar';
 import Title from '../../components/Title/Title';
-import { Menu, MenuHeader, MenuItem } from '../../components/Menu';
+import Menu from '../../components/Menu/Menu';
+import MenuHeader from '../../components/Menu/MenuHeader';
+import MenuItem from '../../components/Menu/MenuItem';
 
 
 // CONTAINER IMPORTS
@@ -27,7 +29,6 @@ const AppContainerStyle = styled.div`
   flex: 1;
   display: flex;
 `;
-
 
 class AppContainer extends Component {
     render() {

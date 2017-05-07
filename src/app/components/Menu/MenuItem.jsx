@@ -14,7 +14,7 @@ const MenuItemStyle = styled.div`
 
 const MenuItem = (props) => {
     return (
-        <MenuItemStyle>
+        <MenuItemStyle {...props}>
             {props.children}
         </MenuItemStyle>
     );

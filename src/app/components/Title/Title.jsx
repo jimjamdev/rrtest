@@ -28,7 +28,7 @@ Title.propTypes = {
 };
 
 Title.defaultProps = {
-    as: 'h3'
+    as: 'h1'
 }
 
 export default Title;

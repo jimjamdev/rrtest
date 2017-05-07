@@ -14,7 +14,7 @@ const MenuHeaderStyle = styled.div`
 
 const MenuHeader = (props) => {
     return (
-        <MenuHeaderStyle>
+        <MenuHeaderStyle {...props}>
             {props.children}
         </MenuHeaderStyle>
     );
