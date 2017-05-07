@@ -6,13 +6,14 @@ import AppBar from '../../components/AppBar/AppBar';
 import { Col, Row } from 'react-styled-flexboxgrid';
 import Loader from '../../components/Loader/Loader';
 import Card from '../../components/Card/Card';
+import Button from '../../components/Button/Button';
 
 class HomeContainer extends Component {
     render() {
         return (
-            <div>
+            <section>
                 <AppBar color="white" textColor="darkGrey">
-                    Home
+                    Home <Button color="primary" onClick={() => Actions.toggleNav()}>Nav on Home</Button>
                 </AppBar>
                 <Row>
                     <Col xs={12} md={3}>
@@ -37,7 +38,7 @@ class HomeContainer extends Component {
                     </Col>
                 </Row>
                 <Loader/>
-            </div>
+            </section>
         );
     }
 }

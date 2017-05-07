@@ -45,12 +45,11 @@ class AppContainer extends Component {
                 </Navigation>
                 <Content>
                <AppBar textColor="white" height="3.3rem">
-                   <Title>React Redux Jumpstate Test { this.props.app.count } {this.props.app.navOpen.toString()}</Title>
+                   <Title>React Redux Jumpstate Test</Title>
+                   <div>{ this.props.app.count } {this.props.app.navOpen.toString()}</div>
                </AppBar>
-               <div>
-                   <Route exact path="/" component={HomeContainer}/>
+                    <Route exact path="/" component={HomeContainer}/>
                    <Route exact path="/blog" component={BlogContainer}/>
-               </div>
                 </Content>
             </AppContainerStyle>
         </BrowserRouter>

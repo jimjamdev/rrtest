@@ -7,6 +7,7 @@ import styled from 'styled-components';
 // STYLE IMPORTS
 const AppBarStyle = styled.header`
   display: flex;
+  justify-content: space-between;
   align-items: center;
   color: ${( { textColor, theme } ) => theme && textColor ? theme.color[ textColor ] : theme.base.textColor };
   font-size: inherit;

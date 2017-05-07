@@ -4,6 +4,7 @@ import { Actions } from 'jumpstate';
 
 // UI IMPORTS
 import Button from '../../components/Button/Button';
+import AppBar from '../../components/AppBar/AppBar';
 import Title from '../../components/Title/Title';
 import Loader from '../../components/Loader/Loader';
 
@@ -22,16 +23,21 @@ class BlogContainer extends Component {
                 <li key={blog.login.username}>{blog.name.title} {blog.name.first} {blog.name.last}</li>
             );
         return (
-            <div>
-                <Title>Blog</Title>
-                <Button onClick={() => Actions.decrement()}>Decrement on Blog</Button>
-                <Button onClick={() => Actions.increment()}>Increment on Blog</Button>
-                <Button onClick={() => Actions.toggleNav()}>Nav on Blog</Button>
+            <section>
+                <AppBar color="white" textColor="darkGrey">
+                    <Title>Blog</Title>
+                   <div>
+                       <Button color="primary" onClick={() => Actions.decrement()}>Decrement on Blog</Button>
+                       <Button color="primary" onClick={() => Actions.increment()}>Increment on Blog</Button>
+                       <Button color="primary" onClick={() => Actions.toggleNav()}>Nav on Blog</Button>
+                       <Button color="secondary" onClick={() => Actions.toggleNav()}>Nav on Blog</Button>
+                   </div>
+                </AppBar>
                 <ul>
                     <Button color="red" onClick={ () => Actions.loadArticles() }>Refresh Articles</Button>
                     {listItems}
                 </ul>
-            </div>
+            </section>
         );
     }
 }

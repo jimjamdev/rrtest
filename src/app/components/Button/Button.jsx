@@ -7,7 +7,7 @@ import Loader from '../Loader/Loader'
 // UI IMPORTS
 
 // STYLE IMPORTS
-const ButtonStyle = styled.header`
+const ButtonStyle = styled.button`
   cursor: pointer;
   display: inline-block;
   text-align: center;
@@ -17,9 +17,15 @@ const ButtonStyle = styled.header`
   vertical-align: baseline;
   color: ${( { color, theme } ) => theme && color ? 'white' : theme.base.textColor };
   background:  ${( { color, theme } ) => theme && color ? theme.color[ color ] : 'none' };
-  box-shadow: ${( { theme } ) => theme.base.font };
+  box-shadow: ${( { theme } ) => theme.shadow.z1 };
   border-radius: ${( { rounded } ) => rounded ? '500rem' : '.2rem' };
-  margin: 0.25em;
+  margin: 0 .25rem;
+  &:first-child {
+    margin-left: 0;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
   padding: 0.78571429em 1.5em 0.78571429em;
   text-transform: none;
   text-shadow: none;
@@ -28,7 +34,6 @@ const ButtonStyle = styled.header`
   font-style: normal;
   text-align: center;
   text-decoration: none;
-  box-shadow: ${( { theme } ) => theme.shadow.z1 };
   user-select: none;
   transition: opacity 0.1s ease, background-color 0.1s ease, color 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
   will-change: '';

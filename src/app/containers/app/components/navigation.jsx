@@ -9,7 +9,8 @@ import styled from 'styled-components';
 const NavigationStyle = styled.aside`
     background: ${( { theme } ) => theme.navigation.background };
     width: 220px;
-    box-shadow: ${( { theme } ) => theme.shadow.z1 };
+    box-shadow: ${( { theme } ) => theme.shadow.z2 };
+    z-index: 2;
 `;
 
 
