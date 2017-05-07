@@ -19,12 +19,14 @@ const Content = (props) => {
 }
 
 Content.propTypes = {
-    open: PropTypes.boolean,
-    children: PropTypes.string,
+    children: React.PropTypes.oneOfType([
+        React.PropTypes.arrayOf(React.PropTypes.node),
+        React.PropTypes.node
+    ])
 };
 
 Content.defaultProps = {
-    open: true
+
 }
 
 export default Content;

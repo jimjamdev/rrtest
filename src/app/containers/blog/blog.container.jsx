@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Actions } from 'jumpstate';
 
-
 // UI IMPORTS
 import Button from '../../components/Button/Button';
 import Title from '../../components/Title/Title';

@@ -22,12 +22,13 @@ const Navigation = (props) => {
 }
 
 Navigation.propTypes = {
-    open: PropTypes.boolean,
-    children: PropTypes.string,
+    children: React.PropTypes.oneOfType([
+        React.PropTypes.arrayOf(React.PropTypes.node),
+        React.PropTypes.node
+    ])
 };
 
 Navigation.defaultProps = {
-    open: true
 }
 
 export default Navigation;

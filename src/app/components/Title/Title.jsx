@@ -21,7 +21,10 @@ const Title = (props) => {
 
 Title.propTypes = {
     as: PropTypes.string,
-    children: PropTypes.string,
+    children: React.PropTypes.oneOfType([
+        React.PropTypes.arrayOf(React.PropTypes.node),
+        React.PropTypes.node
+    ])
 };
 
 Title.defaultProps = {
