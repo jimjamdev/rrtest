@@ -5,28 +5,27 @@ import styled from 'styled-components';
 // UI IMPORTS
 
 // STYLE IMPORTS
-const ContentStyle = styled.main`
-    flex: 1;
+const LayoutStyle = styled.section`
+  height: 100%;
 `;
 
 
-const AppContent = (props) => {
+const Layout = (props) => {
     return (
-        <ContentStyle {...props}>
+        <LayoutStyle {...props}>
             {props.children}
-        </ContentStyle>
+        </LayoutStyle>
     );
 }
 
-AppContent.propTypes = {
+Layout.propTypes = {
     children: React.PropTypes.oneOfType([
         React.PropTypes.arrayOf(React.PropTypes.node),
         React.PropTypes.node
     ])
 };
 
-AppContent.defaultProps = {
-
+Layout.defaultProps = {
 }
 
-export default AppContent;
+export default Layout;

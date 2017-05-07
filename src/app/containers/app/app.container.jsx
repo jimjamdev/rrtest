@@ -7,8 +7,8 @@ import { Helmet } from "react-helmet";
 import styled from 'styled-components';
 
 // UI IMPORTS
-import Navigation from './components/navigation';
-import Content from './components/content';
+import AppNavigation from './components/navigation';
+import AppContent from './components/content';
 
 import AppBar from '../../components/AppBar/AppBar';
 import Title from '../../components/Title/Title';
@@ -21,7 +21,7 @@ import { BlogContainer } from '../blog';
 
 // STYLES
 
-const AppContainerStyle = styled.section`
+const AppContainerStyle = styled.div`
   font-family: ${({ theme }) => theme.base.font };
   background: ${({ theme }) => theme.base.background };
   flex: 1;
@@ -39,18 +39,18 @@ class AppContainer extends Component {
                    <title>React Test</title>
                    <link rel="canonical" href="http://domain.com/" />
                </Helmet>
-                <Navigation>
+                <AppNavigation>
                     <Link to="/">Home</Link>
                     <Link to="/blog">Blog</Link>
-                </Navigation>
-                <Content>
+                </AppNavigation>
+                <AppContent>
                <AppBar textColor="white" height="3.3rem">
-                   <Title>React Redux Jumpstate Test</Title>
+                   <Title>App</Title>
                    <div>{ this.props.app.count } {this.props.app.navOpen.toString()}</div>
                </AppBar>
                     <Route exact path="/" component={HomeContainer}/>
                    <Route exact path="/blog" component={BlogContainer}/>
-                </Content>
+                </AppContent>
             </AppContainerStyle>
         </BrowserRouter>
     );

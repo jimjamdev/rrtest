@@ -8,6 +8,8 @@ import styled from 'styled-components';
 import store from './store';
 import theme from './theme';
 
+import './styles/index.scss';
+
 injectGlobal`
    html {
     height: 100%;

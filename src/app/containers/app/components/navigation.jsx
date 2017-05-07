@@ -14,7 +14,7 @@ const NavigationStyle = styled.aside`
 `;
 
 
-const Navigation = (props) => {
+const AppNavigation = (props) => {
     return (
         <NavigationStyle {...props}>
             {props.children}
@@ -22,14 +22,14 @@ const Navigation = (props) => {
     );
 }
 
-Navigation.propTypes = {
+AppNavigation.propTypes = {
     children: React.PropTypes.oneOfType([
         React.PropTypes.arrayOf(React.PropTypes.node),
         React.PropTypes.node
     ])
 };
 
-Navigation.defaultProps = {
+AppNavigation.defaultProps = {
 }
 
-export default Navigation;
+export default AppNavigation;
