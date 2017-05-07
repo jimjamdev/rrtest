@@ -28,7 +28,7 @@ class BlogContainer extends Component {
                 <Button onClick={() => Actions.decrement()}>Decrement on Blog</Button>
                 <Button onClick={() => Actions.increment()}>Increment on Blog</Button>
                 <Button onClick={() => Actions.toggleNav()}>Nav on Blog</Button>
-                <ul divided inverted relaxed>
+                <ul>
                     <Button color="red" onClick={ () => Actions.loadArticles() }>Refresh Articles</Button>
                     {listItems}
                 </ul>

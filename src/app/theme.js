@@ -7,6 +7,9 @@ const theme = {
     appBar: {
       background: 'lightseagreen'
     },
+    navigation: {
+        background: '#333'
+    },
     widget: {
         background: 'white',
         iconColor: 'blue'
