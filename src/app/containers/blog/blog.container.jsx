@@ -7,7 +7,7 @@ import Button from '../../components/Button/Button';
 import AppBar from '../../components/AppBar/AppBar';
 import Title from '../../components/Title/Title';
 import Loader from '../../components/Loader/Loader';
-import Layout from '../../components/Layout/Layout';
+import { Layout, Content } from '../../components/Layout';
 import Icon from '../../components/Icon/Icon';
 import { List, ListItem } from '../../components/List';
 
@@ -35,9 +35,11 @@ class BlogContainer extends Component {
                        <Button color="secondary" onClick={() => Actions.toggleNav()}>Nav on Blog</Button>
                    </div>
                 </AppBar>
-                <List>
-                    {listItems}
-                </List>
+                <Content>
+                    <List>
+                        {listItems}
+                    </List>
+                </Content>
             </Layout>
         );
     }

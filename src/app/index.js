@@ -23,6 +23,9 @@ injectGlobal`
     position: relative;
     margin:0; padding: 0;
     overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
   }
   #root {
     flex: 1;

@@ -15,6 +15,7 @@ const AppBarStyle = styled.header`
   padding: 0 1rem;
   background: ${( { color, theme } ) => theme && color ? theme.color[ color ] : theme.appBar.background };
   box-shadow: ${( { theme } ) => theme.shadow.z1 };
+  z-index: 1;
 `;
 
 

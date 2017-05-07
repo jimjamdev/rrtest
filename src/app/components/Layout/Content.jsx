@@ -5,28 +5,26 @@ import styled from 'styled-components';
 // UI IMPORTS
 
 // STYLE IMPORTS
-const LayoutStyle = styled.section`
+const ContentStyle = styled.article`
   height: 100%;
-  z-index: 0;
+  overflow-y: auto;
 `;
 
 
-const Layout = (props) => {
+const Content = (props) => {
     return (
-        <LayoutStyle {...props}>
+        <ContentStyle {...props}>
             {props.children}
-        </LayoutStyle>
+        </ContentStyle>
     );
 }
 
-Layout.propTypes = {
+Content.propTypes = {
+    padding: React.PropTypes.string,
     children: React.PropTypes.oneOfType([
         React.PropTypes.arrayOf(React.PropTypes.node),
         React.PropTypes.node
     ])
 };
 
-Layout.defaultProps = {
-}
-
-export default Layout;
+export default Content;

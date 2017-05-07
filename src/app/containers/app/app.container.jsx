@@ -12,7 +12,7 @@ import AppContent from './components/content';
 
 import AppBar from '../../components/AppBar/AppBar';
 import Title from '../../components/Title/Title';
-
+import { Menu, MenuHeader, MenuItem } from '../../components/Menu';
 
 
 // CONTAINER IMPORTS
@@ -40,8 +40,15 @@ class AppContainer extends Component {
                    <link rel="canonical" href="http://domain.com/" />
                </Helmet>
                 <AppNavigation>
-                    <Link to="/">Home</Link>
-                    <Link to="/blog">Blog</Link>
+                    <Menu>
+                        <MenuHeader>Menu Header</MenuHeader>
+                        <MenuItem>
+                            <Link to="/">Home</Link>
+                        </MenuItem>
+                        <MenuItem>
+                            <Link to="/blog">Blog</Link>
+                        </MenuItem>
+                    </Menu>
                 </AppNavigation>
                 <AppContent>
                <AppBar textColor="white" height="3.3rem">

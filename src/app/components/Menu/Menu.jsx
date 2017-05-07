@@ -5,26 +5,19 @@ import styled from 'styled-components';
 // UI IMPORTS
 
 // STYLE IMPORTS
-const ListItemStyle = styled.li`
-  display: flex;
-  flex-grow: 1;
-  flex-wrap: no-wrap;
-  justify-content: space-between;
-  align-items: middle;
-  margin:0;
-  padding:.5rem;
-  list-style: none;
+const MenuStyle = styled.div`
+  display: block;
   box-shadow: ${( { theme } ) => theme.shadow.z1 };
   background: ${( { theme } ) => theme.widget.background };
 `;
 
 
-const ListItem = (props) => {
+const Menu = (props) => {
     return (
-        <ListItemStyle>
+        <MenuStyle>
             {props.children}
-        </ListItemStyle>
+        </MenuStyle>
     );
 }
 
-export default ListItem;
+export default Menu;
