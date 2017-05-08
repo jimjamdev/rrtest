@@ -13,6 +13,12 @@ const CardStyle = styled.aside`
   border-radius: .2rem;
   background:  ${( { theme } ) => theme.widget.background };
   box-shadow: ${( { theme } ) => theme.shadow.z1 };
+  
+  position: fixed;
+  top: 0; left: 0; bottom: 0;
+  @media(min-width: 640px) {
+    position: relative;
+  }
 `;
 
 
