@@ -15,7 +15,7 @@ class HomeContainer extends Component {
         return (
             <Layout>
                 <AppBar color="white" textColor="darkGrey">
-                    Home <Button color="primary" onClick={() => Actions.toggleNav()}>Nav on Home</Button>
+                    Home <Button color="primary" onClick={() => Actions.toggleLeftNav()}>Nav on Home</Button>
                 </AppBar>
                 <Content>
                 <Row>

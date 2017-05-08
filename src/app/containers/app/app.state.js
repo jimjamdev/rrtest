@@ -4,11 +4,12 @@ export default State({
     // Initial State
     initial: {
         count: 0,
-        navOpen: true
+        navLeftOpen: true,
+        navRightOpen: false
     },
     // Actions
-    toggleNav (state) {
-        return { ...state, navOpen: !state.navOpen }
+    toggleLeftNav (state) {
+        return { ...state, navLeftOpen: !state.navLeftOpen }
     },
     increment (state) {
         return { ...state, count: ++state.count }

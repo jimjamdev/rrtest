@@ -13,6 +13,9 @@ const NavigationStyle = styled.aside`
     box-shadow: ${( { theme } ) => theme.shadow.z2 };
     z-index: 2;
     transition: .3s ease-in-out;
+    position: fixed;
+    top:0; bottom: 0;
+    left: 0;
 `;
 
 

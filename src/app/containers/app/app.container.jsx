@@ -27,8 +27,8 @@ import { BlogContainer } from '../blog';
 const AppContainerStyle = styled.section`
   font-family: ${({ theme }) => theme.base.font };
   background: ${({ theme }) => theme.base.background };
-  flex: 1;
-  display: flex;
+  display: block;
+  min-height: 100%;
   & a {
     color: ${({ theme }) => theme.base.linkColor };
   }
@@ -44,7 +44,7 @@ class AppContainer extends Component {
                    <title>React Test</title>
                    <link rel="canonical" href="http://domain.com/" />
                </Helmet>
-                <AppNavigation open={this.props.app.navOpen}>
+                <AppNavigation open={this.props.app.navLeftOpen}>
                     <Menu>
                         <MenuHeader>Menu Header</MenuHeader>
                         <MenuItem>
@@ -55,10 +55,10 @@ class AppContainer extends Component {
                         </MenuItem>
                     </Menu>
                 </AppNavigation>
-                <AppContent>
+                <AppContent leftOpen={this.props.app.navLeftOpen}>
                <AppBar textColor="white" height="3.3rem">
                    <Title>App</Title>
-                   <div>{ this.props.app.count } {this.props.app.navOpen.toString()}</div>
+                   <div>{ this.props.app.count } {this.props.app.navLeftOpen.toString()}</div>
                </AppBar>
                     <Route exact path="/" component={HomeContainer}/>
                    <Route exact path="/blog" component={BlogContainer}/>
@@ -70,7 +70,8 @@ class AppContainer extends Component {
 }
 
 AppContainer.propTypes = {
-    navOpen: PropTypes.bool,
+    navLeftOpen: PropTypes.bool,
+    navRightOpen: PropTypes.bool,
     children: PropTypes.oneOfType([
         PropTypes.arrayOf(React.PropTypes.node),
         PropTypes.node
