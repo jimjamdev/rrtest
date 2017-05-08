@@ -8,6 +8,7 @@ import styled from 'styled-components';
 const ContentStyle = styled.article`
   height: 100%;
   overflow-y: auto;
+  padding: 1rem;
 `;
 
 
