@@ -9,7 +9,7 @@ const CardStyle = styled.aside`
   display: flex;
   font-size: inherit;
   padding: 1rem;
-  margin: .5rem 0;
+  margin: 0 0 .5rem 0;
   border-radius: .2rem;
   background:  ${( { theme } ) => theme.widget.background };
   box-shadow: ${( { theme } ) => theme.shadow.z1 };
