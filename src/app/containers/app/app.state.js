@@ -4,7 +4,7 @@ export default State({
     // Initial State
     initial: {
         count: 0,
-        navOpen: false
+        navOpen: true
     },
     // Actions
     toggleNav (state) {

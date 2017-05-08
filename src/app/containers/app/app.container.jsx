@@ -1,5 +1,6 @@
 // LIBRARY IMPORTS
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Actions } from 'jumpstate';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
@@ -43,7 +44,7 @@ class AppContainer extends Component {
                    <title>React Test</title>
                    <link rel="canonical" href="http://domain.com/" />
                </Helmet>
-                <AppNavigation>
+                <AppNavigation open={this.props.app.navOpen}>
                     <Menu>
                         <MenuHeader>Menu Header</MenuHeader>
                         <MenuItem>
@@ -68,6 +69,13 @@ class AppContainer extends Component {
   }
 }
 
+AppContainer.propTypes = {
+    navOpen: PropTypes.bool,
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(React.PropTypes.node),
+        PropTypes.node
+    ])
+};
 
 export default connect(state => {
     return {

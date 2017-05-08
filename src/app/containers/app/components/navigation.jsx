@@ -8,9 +8,11 @@ import styled from 'styled-components';
 // STYLE IMPORTS
 const NavigationStyle = styled.aside`
     background: ${( { theme } ) => theme.navigation.background };
-    width: 220px;
+    width: 200px;
+    transform: translateX(${( { open } ) => open ? '0' : '-200px' });
     box-shadow: ${( { theme } ) => theme.shadow.z2 };
     z-index: 2;
+    transition: .3s ease-in-out;
 `;
 
 
@@ -23,13 +25,11 @@ const AppNavigation = (props) => {
 }
 
 AppNavigation.propTypes = {
-    children: React.PropTypes.oneOfType([
-        React.PropTypes.arrayOf(React.PropTypes.node),
-        React.PropTypes.node
+    open: PropTypes.bool,
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(React.PropTypes.node),
+        PropTypes.node
     ])
 };
-
-AppNavigation.defaultProps = {
-}
 
 export default AppNavigation;

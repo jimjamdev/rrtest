@@ -8,6 +8,7 @@ import Loader from '../../components/Loader/Loader';
 import Card from '../../components/Card/Card';
 import Button from '../../components/Button/Button';
 import Layout from '../../components/Layout/Layout';
+import Image from '../../components/Image/Image'
 
 class HomeContainer extends Component {
     render() {
@@ -19,7 +20,7 @@ class HomeContainer extends Component {
                 <Row>
                     <Col xs={12} md={3}>
                         <Card>
-                            content...
+                            <Image src="http://lorempixel.com/400/200/" />
                         </Card>
                     </Col>
                     <Col xs={12} md={3}>
