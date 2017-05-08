@@ -1,5 +1,5 @@
 // LIBRARY IMPORTS
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 // UI IMPORTS
@@ -7,8 +7,6 @@ import styled from 'styled-components';
 // STYLE IMPORTS
 const MenuStyle = styled.div`
   display: block;
-  box-shadow: ${( { theme } ) => theme.shadow.z1 };
-  background: ${( { theme } ) => theme.widget.background };
 `;
 
 
@@ -19,5 +17,12 @@ const Menu = (props) => {
         </MenuStyle>
     );
 }
+
+Menu.propTypes = {
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(React.PropTypes.node),
+        PropTypes.node
+    ])
+};
 
 export default Menu;

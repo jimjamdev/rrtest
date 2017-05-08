@@ -9,6 +9,7 @@ const ListStyle = styled.ul`
   margin:0;
   padding:0;
   list-style: none;
+  background: transparent;
 `;
 
 
@@ -19,5 +20,12 @@ const List = (props) => {
         </ListStyle>
     );
 }
+
+List.propTypes = {
+    children: React.PropTypes.oneOfType([
+        React.PropTypes.arrayOf(React.PropTypes.node),
+        React.PropTypes.node
+    ])
+};
 
 export default List;

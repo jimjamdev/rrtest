@@ -6,9 +6,9 @@ import styled from 'styled-components';
 
 // STYLE IMPORTS
 const MenuItemStyle = styled.div`
-  display: block;
+  display: flex;
+  padding: .3rem;
   box-shadow: ${( { theme } ) => theme.shadow.z1 };
-  background: ${( { theme } ) => theme.widget.background };
 `;
 
 
@@ -19,5 +19,12 @@ const MenuItem = (props) => {
         </MenuItemStyle>
     );
 }
+
+MenuItem.propTypes = {
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(React.PropTypes.node),
+        PropTypes.node
+    ])
+};
 
 export default MenuItem;

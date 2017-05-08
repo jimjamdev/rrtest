@@ -9,7 +9,8 @@ import Title from '../../components/Title/Title';
 import Loader from '../../components/Loader/Loader';
 import { Layout, Content } from '../../components/Layout';
 import Icon from '../../components/Icon/Icon';
-import { List, ListItem } from '../../components/List';
+import List from '../../components/List/List';
+import ListItem from '../../components/List/ListItem';
 
 class BlogContainer extends Component {
 

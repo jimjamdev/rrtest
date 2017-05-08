@@ -23,11 +23,14 @@ import { BlogContainer } from '../blog';
 
 // STYLES
 
-const AppContainerStyle = styled.div`
+const AppContainerStyle = styled.section`
   font-family: ${({ theme }) => theme.base.font };
   background: ${({ theme }) => theme.base.background };
   flex: 1;
   display: flex;
+  & a {
+    color: ${({ theme }) => theme.base.linkColor };
+  }
 `;
 
 class AppContainer extends Component {

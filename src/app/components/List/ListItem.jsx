@@ -1,6 +1,6 @@
 // LIBRARY IMPORTS
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 // UI IMPORTS
 
@@ -26,5 +26,12 @@ const ListItem = (props) => {
         </ListItemStyle>
     );
 }
+
+ListItem.propTypes = {
+    children: React.PropTypes.oneOfType([
+        React.PropTypes.arrayOf(React.PropTypes.node),
+        React.PropTypes.node
+    ])
+};
 
 export default ListItem;

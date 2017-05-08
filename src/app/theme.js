@@ -2,13 +2,15 @@ const theme = {
     base: {
         background: '#efefef',
         textColor: '#444',
+        linkColor: '#444',
         font: "'Roboto', 'Helvetica Neue', Arial, Helvetica, sans-serif",
     },
     appBar: {
       background: 'lightseagreen'
     },
     navigation: {
-        background: '#333'
+        background: '#333',
+        linkColor: '#efefef'
     },
     widget: {
         background: 'white',
