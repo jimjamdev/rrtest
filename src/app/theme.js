@@ -3,6 +3,7 @@ const theme = {
         background: '#efefef',
         textColor: '#444',
         linkColor: '#444',
+        borderColor: 'rgba(0,0,0,0.1)',
         font: "'Roboto', 'Helvetica Neue', Arial, Helvetica, sans-serif",
     },
     appBar: {
@@ -14,7 +15,7 @@ const theme = {
     },
     widget: {
         background: 'white',
-        iconColor: 'blue'
+        iconColor: 'blue',
     },
     color: {
         primary: '#8BC34A',

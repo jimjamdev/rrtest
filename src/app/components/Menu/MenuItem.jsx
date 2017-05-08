@@ -8,7 +8,7 @@ import styled from 'styled-components';
 const MenuItemStyle = styled.div`
   display: flex;
   padding: .3rem;
-  box-shadow: ${( { theme } ) => theme.shadow.z1 };
+  border-bottom: solid 1px ${( { theme } ) => theme.base.borderColor };
 `;
 
 
