@@ -6,14 +6,15 @@ import styled from 'styled-components';
 
 // STYLE IMPORTS
 const LayoutStyle = styled.section`
-  height: 100%;
+  position: relative;
+  min-height: 100%;
   z-index: 0;
 `;
 
 
 const Layout = (props) => {
     return (
-        <LayoutStyle {...props}>
+        <LayoutStyle {...props} className="Layout">
             {props.children}
         </LayoutStyle>
     );

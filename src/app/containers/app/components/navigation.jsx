@@ -8,14 +8,15 @@ import styled from 'styled-components';
 // STYLE IMPORTS
 const NavigationStyle = styled.aside`
     background: ${( { theme } ) => theme.navigation.background };
-    width: 200px;
-    transform: translateX(${( { open } ) => open ? '0' : '-200px' });
+    width: ${( { theme } ) => theme.navigation.width };
+    transform: translateX(${( { theme, open } ) => theme && open ? '0' : '-' + theme.navigation.width });
     box-shadow: ${( { theme } ) => theme.shadow.z2 };
     z-index: 2;
-    transition: .3s ease-in-out;
+    transition: .3s linear;
     position: fixed;
     top:0; bottom: 0;
     left: 0;
+    z-index: 5;
 `;
 
 

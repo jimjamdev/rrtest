@@ -11,7 +11,8 @@ const theme = {
     },
     navigation: {
         background: '#333',
-        linkColor: '#efefef'
+        linkColor: '#efefef',
+        width: '220px'
     },
     widget: {
         background: 'white',

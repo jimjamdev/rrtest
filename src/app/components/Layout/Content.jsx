@@ -6,7 +6,7 @@ import styled from 'styled-components';
 
 // STYLE IMPORTS
 const ContentStyle = styled.article`
-  height: 100%;
+  min-height: 100%;
   overflow-y: auto;
   padding: 1rem;
 `;
@@ -14,7 +14,7 @@ const ContentStyle = styled.article`
 
 const Content = (props) => {
     return (
-        <ContentStyle {...props}>
+        <ContentStyle {...props} className="LayoutContent">
             {props.children}
         </ContentStyle>
     );

@@ -7,9 +7,10 @@ import styled from 'styled-components';
 // STYLE IMPORTS
 const ContentStyle = styled.main`
     display: block;
-    transform: translateX(${( { leftOpen } ) => leftOpen ? '200px' : '0' });
-    width: calc(100% - ${( { leftOpen } ) => leftOpen ? '200px' : '0' });
-    transition: .3s ease-in-out;
+    transform: translateX(${( { theme, leftOpen } ) => leftOpen ? theme.navigation.width : '0px' });
+    width: calc(100% - ${( { theme, leftOpen } ) => leftOpen ? theme.navigation.width : '0px' });
+    transition: .3s linear;
+    height: 100%;
 `;
 
 
@@ -22,6 +23,7 @@ const AppContent = (props) => {
 }
 
 AppContent.propTypes = {
+    rightOpen: PropTypes.bool,
     leftOpen: PropTypes.bool,
     children: React.PropTypes.oneOfType([
         React.PropTypes.arrayOf(React.PropTypes.node),

@@ -11,6 +11,9 @@ export default State({
     toggleLeftNav (state) {
         return { ...state, navLeftOpen: !state.navLeftOpen }
     },
+    toggleRightNav (state) {
+        return { ...state, navRightOpen: !state.navRightOpen }
+    },
     increment (state) {
         return { ...state, count: ++state.count }
     },

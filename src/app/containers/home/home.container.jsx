@@ -21,7 +21,7 @@ class HomeContainer extends Component {
                 <Row>
                     <Col xs={12} md={3}>
                         <Card>
-                            <Image src="http://lorempixel.com/400/200/" />
+                            <Image src="http://lorempixel.com/200/200/" responsive />
                         </Card>
                     </Col>
                     <Col xs={12} md={3}>

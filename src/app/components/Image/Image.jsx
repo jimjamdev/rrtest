@@ -7,8 +7,7 @@ import styled from 'styled-components';
 // STYLE IMPORTS
 const ImageStyle = styled.img`
     display: block;
-    width: 100%;
-    margin: 0 auto;
+    ${( { responsive } ) => responsive ? 'width: 100%; height: auto;' : '' };
     ${( { rounded } ) => rounded ? 'border-radius: 50%' : '' };
 `;
 
@@ -22,6 +21,7 @@ const Image = (props) => {
 Image.propTypes = {
     src: PropTypes.string,
     rounded: PropTypes.string,
+    responsive: PropTypes.string,
     src: PropTypes.string
 };
 
