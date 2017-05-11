@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import { Actions } from 'jumpstate';
 
@@ -13,7 +14,10 @@ import Image from '../../components/Image/Image'
 class HomeContainer extends Component {
 
     componentDidMount(){
-        const height = document.getElementById('mainContent').offsetHeight;
+        setTimeout(() => {
+            const height = document.getElementById('mainContent').offsetHeight;
+            console.log(height);
+        }, 1)
     }
 
     render() {
