@@ -21,7 +21,7 @@ const Image = (props) => {
 Image.propTypes = {
     src: PropTypes.string,
     rounded: PropTypes.string,
-    responsive: PropTypes.string,
+    responsive: PropTypes.bool,
     src: PropTypes.string
 };
 

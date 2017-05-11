@@ -11,13 +11,18 @@ import { Layout, Content } from '../../components/Layout';
 import Image from '../../components/Image/Image'
 
 class HomeContainer extends Component {
+
+    componentDidMount(){
+        const height = document.getElementById('mainContent').offsetHeight;
+    }
+
     render() {
         return (
             <Layout>
                 <AppBar color="white" textColor="darkGrey">
                     Home <Button color="primary" onClick={() => Actions.toggleLeftNav()}>Nav on Home</Button>
                 </AppBar>
-                <Content>
+                <Content id="mainContent">
                 <Row>
                     <Col xs={12} md={3}>
                         <Card>
@@ -41,6 +46,8 @@ class HomeContainer extends Component {
                     </Col>
                 </Row>
                 <Loader/>
+
+                    <div style={{height: this.height}}>some content</div>
                 </Content>
             </Layout>
         );
