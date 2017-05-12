@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Route } from 'react-router-dom';
+import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import { Actions } from 'jumpstate';
 
 // UI IMPORTS
@@ -12,6 +12,7 @@ import Icon from '../../components/Icon/Icon';
 
 // COMPONENT IMPORTS
 import blogIndex from './index/blog.index';
+import blogView from './view/blog.view';
 
 class BlogContainer extends Component {
 
@@ -33,7 +34,10 @@ class BlogContainer extends Component {
                    </div>
                 </AppBar>
                 <Content>
-                    <Route path="/" component={blogIndex}/>
+                    <Switch>
+                        <Route exact path={`/blog`} component={blogIndex}/>
+                        <Route exact path={`/blog/view`} component={blogView}/>
+                    </Switch>
                 </Content>
             </Layout>
         );

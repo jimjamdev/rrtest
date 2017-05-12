@@ -5,6 +5,7 @@ export default State({
     // Initial State
     initial: {
         articles: [],
+        article: null,
         error : null,
         loading: false
     },
