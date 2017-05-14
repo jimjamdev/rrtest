@@ -19,7 +19,8 @@ import MenuItem from '../../components/Menu/MenuItem';
 
 
 // CONTAINER IMPORTS
-import ChatContainer from '../Chat/chat.container';
+import { AuthContainer } from '../auth';
+import { ChatContainer } from '../chat';
 import { HomeContainer } from '../home';
 import { BlogContainer } from '../blog';
 
@@ -54,6 +55,9 @@ class AppContainer extends Component {
                         <MenuItem>
                             <Link to="/blog">Blog</Link>
                         </MenuItem>
+                        <MenuItem>
+                            <Link to="/auth">Auth</Link>
+                        </MenuItem>
                     </Menu>
                 </AppNavigation>
                 <AppContent leftOpen={this.props.app.navLeftOpen}>
@@ -63,6 +67,7 @@ class AppContainer extends Component {
                </AppBar>
                    <Switch>
                        <Route exact path="/" component={HomeContainer}/>
+                       <Route path="/auth" component={AuthContainer}/>
                        <Route path="/blog" component={BlogContainer}/>
                    </Switch>
                 </AppContent>

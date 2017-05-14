@@ -31,7 +31,7 @@ class BlogContainer extends Component {
                 <Content>
                     <Switch>
                         <Route exact path={`/blog`} component={blogIndex}/>
-                        <Route path={`/blog/view`} component={blogView}/>
+                        <Route path={`/blog/:slug`} component={blogView}/>
                     </Switch>
                 </Content>
             </Layout>
