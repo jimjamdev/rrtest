@@ -19,6 +19,7 @@ import MenuItem from '../../components/Menu/MenuItem';
 
 
 // CONTAINER IMPORTS
+import ChatContainer from '../Chat/chat.container';
 import { HomeContainer } from '../home';
 import { BlogContainer } from '../blog';
 
@@ -65,6 +66,7 @@ class AppContainer extends Component {
                        <Route path="/blog" component={BlogContainer}/>
                    </Switch>
                 </AppContent>
+                <ChatContainer/>
             </AppContainerStyle>
         </BrowserRouter>
     );
