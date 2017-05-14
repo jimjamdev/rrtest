@@ -1,16 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+
+const ChatMenuStyle = styled.aside`
+   display: flex;
+   flex-direction: column;
+   box-shadow: ${( { theme } ) => theme.shadow.z2 };
+`;
+
+// UI Imports
+import List from '../../components/List/List';
+import ListItem from '../../components/List/ListItem';
 
 const ChatMenu = (props) => {
     return (
-        <div>
-            <ul>
-                <li><Link to="/chat/window">Chat 1</Link></li>
-                <li>Chat 2</li>
-                <li>Chat 3</li>
-                <li>Chat 4</li>
-            </ul>
-        </div>
+        <ChatMenuStyle>
+            <List>
+                <ListItem><Link to="/chat/window">Chat 1</Link></ListItem>
+                <ListItem>Chat 2</ListItem>
+                <ListItem>Chat 3</ListItem>
+                <ListItem>Chat 4</ListItem>
+            </List>
+        </ChatMenuStyle>
     )
 }
 

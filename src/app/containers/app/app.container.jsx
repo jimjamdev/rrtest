@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Actions } from 'jumpstate';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import Draggable from 'react-draggable';
 import { Helmet } from "react-helmet";
 import styled from 'styled-components';
 
@@ -71,7 +72,9 @@ class AppContainer extends Component {
                        <Route path="/blog" component={BlogContainer}/>
                    </Switch>
                 </AppContent>
-                <ChatContainer/>
+                <Draggable bounds="body">
+                    <ChatContainer style={{width: '450px', position: 'absolute', right: '5px', bottom: '5px'}} />
+                </Draggable>
             </AppContainerStyle>
         </BrowserRouter>
     );

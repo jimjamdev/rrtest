@@ -21,7 +21,7 @@ const ListItemStyle = styled.li`
 
 const ListItem = (props) => {
     return (
-        <ListItemStyle {...props}>
+        <ListItemStyle {...props} className="ListItem">
             {props.children}
         </ListItemStyle>
     );

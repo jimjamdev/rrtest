@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Route, Switch, HashRouter, Link } from 'react-router-dom';
+import { Route, Switch, MemoryRouter, Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { Actions } from 'jumpstate';
 
@@ -17,10 +17,6 @@ const ChatContainerStyle = styled.aside`
    display: flex;
    flex-direction: column;
    background: white;
-   position: absolute;
-   right: 0;
-   bottom: 0;
-   width: 400px;
    box-shadow: ${( { theme } ) => theme.shadow.z2 };
 `;
 
@@ -31,20 +27,20 @@ class ChatContainer extends Component {
 
     render() {
         return (
-            <HashRouter>
-                <ChatContainerStyle {...this.props} className="Chat">
-                    <AppBar color="white" textColor="darkGrey">
-                        <Title><Link to="/">Chat</Link></Title>
-                    </AppBar>
-                    <ChatContentStyle>
-                        <ChatMenu />
-                        <Switch>
-                            <Route exact path="/" component={ChatHome}/>
-                            <Route path="/chat/window" component={ChatWindow}/>
-                        </Switch>
-                    </ChatContentStyle>
-                </ChatContainerStyle>
-            </HashRouter>
+            <MemoryRouter>
+                    <ChatContainerStyle {...this.props} className="Chat">
+                        <AppBar color="white" textColor="darkGrey">
+                            <Title><Link to="/">Chat</Link></Title>
+                        </AppBar>
+                        <ChatContentStyle>
+                            <ChatMenu />
+                            <Switch>
+                                <Route exact path="/" component={ChatHome}/>
+                                <Route path="/chat/:slug" component={ChatWindow}/>
+                            </Switch>
+                        </ChatContentStyle>
+                    </ChatContainerStyle>
+            </MemoryRouter>
         );
     }
 }

@@ -15,7 +15,7 @@ const ListStyle = styled.ul`
 
 const List = (props) => {
     return (
-        <ListStyle {...props}>
+        <ListStyle {...props} className="List">
             {props.children}
         </ListStyle>
     );
