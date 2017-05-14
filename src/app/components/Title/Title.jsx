@@ -7,7 +7,7 @@ import styled from 'styled-components';
 // STYLE IMPORTS
 const TitleStyle = styled.h1`
   font-size: inherit;
-  font-weight: 500;
+  font-weight: 400;
 `;
 
 
