@@ -29,8 +29,10 @@ class BlogContainer extends Component {
                    </div>
                 </AppBar>
                 <Content>
+                    <Switch>
                         <Route exact path={`/blog`} component={blogIndex}/>
                         <Route path={`/blog/view`} component={blogView}/>
+                    </Switch>
                 </Content>
             </Layout>
         );
