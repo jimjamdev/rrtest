@@ -31,6 +31,7 @@ class ChatContainer extends Component {
 
     render() {
         return (
+            <BrowserRouter>
             <ChatContainerStyle {...this.props} className="Chat">
                 <AppBar color="white" textColor="darkGrey">
                     <Title>Chat</Title>
@@ -38,11 +39,12 @@ class ChatContainer extends Component {
                 <ChatContentStyle>
                     <ChatMenu />
                     <Switch>
-                        <Route path="/" component={ChatHome}/>
-                        <Route path="/chat" component={ChatWindow}/>
+                        <Route exact path="/" component={ChatHome}/>
+                        <Route path="/chat/window" component={ChatWindow}/>
                     </Switch>
                 </ChatContentStyle>
             </ChatContainerStyle>
+            </BrowserRouter>
         );
     }
 }
