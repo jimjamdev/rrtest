@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Actions } from 'jumpstate';
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import { Helmet } from "react-helmet";
 import styled from 'styled-components';
 
@@ -60,8 +60,10 @@ class AppContainer extends Component {
                    <Title>App</Title>
                    <div>{ this.props.app.count } {this.props.app.navLeftOpen.toString()}</div>
                </AppBar>
-                    <Route exact path="/" component={HomeContainer}/>
-                   <Route exact path="/blog" component={BlogContainer}/>
+                   <Switch>
+                       <Route exact path="/" component={HomeContainer}/>
+                       <Route path="/blog" component={BlogContainer}/>
+                   </Switch>
                 </AppContent>
             </AppContainerStyle>
         </BrowserRouter>

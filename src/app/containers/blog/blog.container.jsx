@@ -16,11 +16,6 @@ import blogView from './view/blog.view';
 
 class BlogContainer extends Component {
 
-    componentWillMount() {
-        return Actions.loadArticles();
-    }
-
-
     render() {
         return (
             <Layout>
@@ -34,10 +29,8 @@ class BlogContainer extends Component {
                    </div>
                 </AppBar>
                 <Content>
-                    <Switch>
                         <Route exact path={`/blog`} component={blogIndex}/>
-                        <Route exact path={`/blog/view`} component={blogView}/>
-                    </Switch>
+                        <Route path={`/blog/view`} component={blogView}/>
                 </Content>
             </Layout>
         );
