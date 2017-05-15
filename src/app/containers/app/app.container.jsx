@@ -38,6 +38,13 @@ const AppContainerStyle = styled.section`
   }
 `;
 
+const ChatContainerStyle = styled.section`
+  position: absolute;
+  min-width: 300px;
+  right: 5px;
+  bottom: 0;
+`;
+
 class AppContainer extends Component {
     render() {
     return (
