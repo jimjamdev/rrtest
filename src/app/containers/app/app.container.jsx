@@ -12,11 +12,11 @@ import styled from 'styled-components';
 import AppNavigation from './components/navigation';
 import AppContent from './components/content';
 
-import AppBar from '../../components/AppBar/AppBar';
-import Title from '../../components/Title/Title';
-import Menu from '../../components/Menu/Menu';
-import MenuHeader from '../../components/Menu/MenuHeader';
-import MenuItem from '../../components/Menu/MenuItem';
+import AppBar from '../../components/app-bar/app-bar';
+import Title from '../../components/title/title';
+import Menu from '../../components/menu/menu';
+import MenuHeader from '../../components/menu/menu-header';
+import MenuItem from '../../components/menu/menu-item';
 
 
 // CONTAINER IMPORTS

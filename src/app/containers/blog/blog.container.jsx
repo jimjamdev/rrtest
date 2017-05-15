@@ -4,11 +4,11 @@ import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import { Actions } from 'jumpstate';
 
 // UI IMPORTS
-import Button from '../../components/Button/Button';
-import AppBar from '../../components/AppBar/AppBar';
-import Title from '../../components/Title/Title';
-import { Layout, Content } from '../../components/Layout';
-import Icon from '../../components/Icon/Icon';
+import Button from '../../components/button/button';
+import AppBar from '../../components/app-bar/app-bar';
+import Title from '../../components/title/title';
+import { Layout, Content } from '../../components/layout';
+import Icon from '../../components/icon/icon';
 
 // COMPONENT IMPORTS
 import blogIndex from './index/blog.index';

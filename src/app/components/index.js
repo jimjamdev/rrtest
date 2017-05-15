@@ -1,2 +1,2 @@
-export * from './AppBar/AppBar';
-export * from './Card/Card';
+export * from './app-bar/app-bar';
+export * from './card/card';

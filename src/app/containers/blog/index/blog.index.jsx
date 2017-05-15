@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 import { Actions } from 'jumpstate';
 
 // UI IMPORTS
-import Loader from '../../../components/Loader/Loader';
-import List from '../../../components/List/List';
-import ListItem from '../../../components/List/ListItem';
+import Loader from '../../../components/loader/loader';
+import List from '../../../components/list/list';
+import ListItem from '../../../components/list/list-item';
 
 class blogIndex extends Component {
 

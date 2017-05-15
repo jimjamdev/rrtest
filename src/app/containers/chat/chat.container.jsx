@@ -5,8 +5,8 @@ import styled from 'styled-components';
 import { Actions } from 'jumpstate';
 
 // UI IMPORTS
-import AppBar from '../../components/AppBar/AppBar';
-import Title from '../../components/Title/Title';
+import AppBar from '../../components/app-bar/app-bar';
+import Title from '../../components/title/title';
 
 // COMPONENT IMPORTS
 import ChatMenu from './/chat.menu';

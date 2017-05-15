@@ -9,8 +9,8 @@ const ChatMenuStyle = styled.aside`
 `;
 
 // UI Imports
-import List from '../../components/List/List';
-import ListItem from '../../components/List/ListItem';
+import List from '../../components/list/list';
+import ListItem from '../../components/list/list-item';
 
 const ChatMenu = (props) => {
     return (

@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import { Actions } from 'jumpstate';
 
-import AppBar from '../../components/AppBar/AppBar';
+import AppBar from '../../components/app-bar/app-bar';
 import { Col, Row } from 'react-styled-flexboxgrid';
-import Loader from '../../components/Loader/Loader';
-import Card from '../../components/Card/Card';
-import Button from '../../components/Button/Button';
-import { Layout, Content } from '../../components/Layout';
-import Image from '../../components/Image/Image'
+import Loader from '../../components/loader/loader';
+import Card from '../../components/card/card';
+import Button from '../../components/button/button';
+import { Layout, Content } from '../../components/layout';
+import Image from '../../components/image/image'
 
 class HomeContainer extends Component {
 

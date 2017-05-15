@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { lighten } from 'polished';
-import Loader from '../Loader/Loader'
+import Loader from '../loader/loader'
 // UI IMPORTS
 
 // STYLE IMPORTS
