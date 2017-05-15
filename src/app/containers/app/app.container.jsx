@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { Actions } from 'jumpstate';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import Draggable from 'react-draggable';
+import Resizable from 'react-resizable-box';
 import { Helmet } from "react-helmet";
 import styled from 'styled-components';
 
