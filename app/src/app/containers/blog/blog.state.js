@@ -11,9 +11,10 @@ export default State({
     },
     // LOAD DATA
     loadArticlesSuccess (state, payload) {
+        console.log('payload', payload)
         return {
             ...state,
-            articles: payload.data.results,
+            articles: payload.data.data,
             error: null,
             loading: false
         }
@@ -36,7 +37,7 @@ export default State({
 
 const loadArticles = Effect('loadArticles', (payload) => {
     Actions.showLoading(true)
-    axios.get('https://randomuser.me/api/?results=20')
+    axios.get('http://localhost:3030/blog')
         .then(Actions.loadArticlesSuccess)
         .catch(Actions.loadArticlesError)
 });
