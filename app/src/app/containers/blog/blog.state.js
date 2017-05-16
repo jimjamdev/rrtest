@@ -1,11 +1,11 @@
 import {State, Effect, Actions} from 'jumpstate';
 import axios from 'axios';
+import config from '../../config';
 
 export default State({
     // Initial State
     initial: {
-        articles: [],
-        article: null,
+        data: [],
         error : null,
         loading: false
     },
@@ -14,7 +14,7 @@ export default State({
         console.log('payload', payload)
         return {
             ...state,
-            articles: payload.data.data,
+            data: payload.data.data,
             error: null,
             loading: false
         }
@@ -22,7 +22,7 @@ export default State({
     loadArticlesError (state, payload) {
         return {
             ...state,
-            articles: [],
+            data: [],
             loading: false,
             error: payload.message
         }
@@ -37,7 +37,7 @@ export default State({
 
 const loadArticles = Effect('loadArticles', (payload) => {
     Actions.showLoading(true)
-    axios.get('http://localhost:3030/blog')
+    axios.get(`${config.ApiUrl}/blog`)
         .then(Actions.loadArticlesSuccess)
         .catch(Actions.loadArticlesError)
 });

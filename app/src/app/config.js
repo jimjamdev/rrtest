@@ -1,3 +1,5 @@
 const config = {
-    defaultApiUrl: "http://localhost:3030/"
+    ApiUrl: "http://localhost:3030"
 }
+
+export default config;
