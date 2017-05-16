@@ -5,7 +5,7 @@ import config from '../../config';
 export default State({
     // Initial State
     initial: {
-        data: [],
+        blogArticles: [],
         error : null,
         loading: false
     },
@@ -14,15 +14,15 @@ export default State({
         console.log('payload', payload)
         return {
             ...state,
-            data: payload.data.data,
+            blogArticles: payload.data,
             error: null,
-            loading: false
+            loading: true
         }
     },
     loadArticlesError (state, payload) {
         return {
             ...state,
-            data: [],
+            blogArticles: [],
             loading: false,
             error: payload.message
         }

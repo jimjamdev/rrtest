@@ -16,14 +16,13 @@ class blogIndex extends Component {
 
     render () {
         const { blog, loading } = this.props;
-        console.log('blog', blog);
-        const listItems = loading ? <Loader/>
-            : blog.data.map((blog) =>
-                <ListItem key={blog._id}><Link to={`/blog/1`}>{blog.title} {blog.text}</Link></ListItem>
+        const blogList = loading ? <Loader/>
+            : (blog.blogArticles.data || []).map((blog) =>
+                <ListItem key={blog._id}><Link to={`/blog/${blog._id}`}>{blog.title} {blog.text}</Link></ListItem>
             );
         return (
             <List>
-                {listItems}
+                {blogList}
             </List>
         )
     }
