@@ -11,7 +11,7 @@ import { Layout, Content } from '../../components/layout';
 import Icon from '../../components/icon/icon';
 
 // COMPONENT IMPORTS
-import blogIndex from './index/blog.index';
+import blogList from './list/blog.list';
 import blogView from './view/blog.view';
 
 class BlogContainer extends Component {
@@ -30,7 +30,7 @@ class BlogContainer extends Component {
                 </AppBar>
                 <Content>
                     <Switch>
-                        <Route exact path={`/blog`} component={blogIndex}/>
+                        <Route exact path={`/blog`} component={blogList}/>
                         <Route path={`/blog/:slug`} component={blogView}/>
                     </Switch>
                 </Content>

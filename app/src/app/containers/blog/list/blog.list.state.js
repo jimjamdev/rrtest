@@ -10,7 +10,7 @@ export default State({
         loading: false
     },
     // LOAD DATA
-    loadArticleSuccess (state, payload) {
+    loadArticlesSuccess (state, payload) {
         console.log('payload', payload)
         return {
             ...state,
@@ -19,7 +19,7 @@ export default State({
             loading: true
         }
     },
-    loadArticleError (state, payload) {
+    loadArticlesError (state, payload) {
         return {
             ...state,
             data: [],
@@ -27,7 +27,7 @@ export default State({
             error: payload.message
         }
     },
-    showBlogArticleLoading (state) {
+    showLoading (state) {
         return {
             ...state,
             loading: true
@@ -35,9 +35,9 @@ export default State({
     }
 })
 
-const loadArticle = Effect('loadArticle', (payload) => {
-    Actions.showBlogArticleLoading(true)
+const loadArticles = Effect('loadArticles', (payload) => {
+    Actions.showLoading(true)
     axios.get(`${config.ApiUrl}/blog`)
-        .then(Actions.loadArticleSuccess)
-        .catch(Actions.loadArticleError)
+        .then(Actions.loadArticlesSuccess)
+        .catch(Actions.loadArticlesError)
 });

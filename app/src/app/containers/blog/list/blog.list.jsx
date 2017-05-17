@@ -8,28 +8,31 @@ import Loader from '../../../components/loader/loader';
 import List from '../../../components/list/list';
 import ListItem from '../../../components/list/list-item';
 
-class blogIndex extends Component {
+class blogList extends Component {
 
     componentWillMount() {
         return Actions.loadArticles();
     }
 
     render () {
-        const { blog, loading } = this.props;
-        const blogList = loading ? <Loader/>
-            : (blog.blogArticles.data || []).map((blog) =>
+        const { blogList, loading } = this.props;
+        const blogListItems = loading ? <Loader/>
+            : (blogList.data.data || []).map((blog) =>
                 <ListItem key={blog._id}><Link to={`/blog/${blog._id}`}>{blog.title} {blog.text}</Link></ListItem>
             );
         return (
-            <List>
-                {blogList}
-            </List>
+            <div>
+                <h5>Results: { blogList.data.total || [] }</h5>
+                <List>
+                    {blogListItems}
+                </List>
+            </div>
         )
     }
 }
 
 export default connect(state => {
     return {
-        blog: state.blog
+        blogList: state.blogList
     }
-})(blogIndex)
+})(blogList)

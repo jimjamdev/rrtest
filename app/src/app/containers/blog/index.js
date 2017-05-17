@@ -1,6 +1,14 @@
 import BlogContainer from './blog.container';
-import BlogIndex from './index/blog.index';
+import BlogList from './list/blog.list';
+import BlogListState from './list/blog.list.state';
 import BlogView from './view/blog.view';
-import BlogState from './blog.state';
+import BlogViewState from './view/blog.view.state';
 
-export { BlogContainer, BlogState, BlogIndex, BlogView };
+
+export {
+    BlogContainer,
+    BlogListState,
+    BlogList,
+    BlogView,
+    BlogViewState
+};
