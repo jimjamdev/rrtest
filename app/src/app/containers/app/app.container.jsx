@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Actions } from 'jumpstate';
-import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Link, MemoryRouter } from 'react-router-dom';
 import Draggable from 'react-draggable';
 import Resizable from 'react-resizable-box';
 import { Helmet } from "react-helmet";
@@ -65,6 +65,9 @@ class AppContainer extends Component {
                             <Link to="/blog">Blog</Link>
                         </MenuItem>
                         <MenuItem>
+                            <Link to="/chat">Chat</Link>
+                        </MenuItem>
+                        <MenuItem>
                             <Link to="/auth">Auth</Link>
                         </MenuItem>
                     </Menu>
@@ -78,10 +81,13 @@ class AppContainer extends Component {
                        <Route exact path="/" component={HomeContainer}/>
                        <Route path="/auth" component={AuthContainer}/>
                        <Route path="/blog" component={BlogContainer}/>
+                       <Route path="/chat" component={ChatContainer}/>
                    </Switch>
                 </AppContent>
                 <Draggable bounds="body">
-                    <ChatContainer style={{width: '450px', position: 'absolute', right: '5px', bottom: '5px'}} />
+                    <MemoryRouter>
+                        <ChatContainer style={{width: '450px', position: 'absolute', right: '5px', bottom: '5px'}} />
+                    </MemoryRouter>
                 </Draggable>
             </AppContainerStyle>
         </BrowserRouter>

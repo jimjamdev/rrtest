@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Route, Switch, MemoryRouter, Link } from 'react-router-dom';
+import { Route, Switch, Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { Actions } from 'jumpstate';
 
@@ -27,20 +27,20 @@ class ChatContainer extends Component {
 
     render() {
         return (
-            <MemoryRouter>
+
                     <ChatContainerStyle {...this.props} className="Chat">
                         <AppBar color="white" textColor="darkGrey">
-                            <Title><Link to="/">Chat</Link></Title>
+                            <Title><Link to="/chat">Chat</Link></Title>
                         </AppBar>
                         <ChatContentStyle>
                             <ChatMenu />
                             <Switch>
-                                <Route exact path="/" component={ChatHome}/>
+                                <Route exact path="/chat" component={ChatHome}/>
                                 <Route path="/chat/:slug" component={ChatWindow}/>
                             </Switch>
                         </ChatContentStyle>
                     </ChatContainerStyle>
-            </MemoryRouter>
+
         );
     }
 }
