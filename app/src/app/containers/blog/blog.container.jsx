@@ -24,7 +24,7 @@ class BlogContainer extends Component {
                     <Title>Blog</Title>
                    <div>
                        <DropDownMenu content={<div>blah</div>}>
-                           <Button color="red">Dropdown<Icon name="menu" /></Button>
+                           <Button>Dropdown</Button>
                        </DropDownMenu>
                        <DropDownMenu content={<div>blah</div>}>
                            <Button color="red" onClick={ () => Actions.loadArticles() }><Icon name="refresh" /></Button>
