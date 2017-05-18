@@ -32,6 +32,7 @@ const AppContainerStyle = styled.section`
   font-family: ${({ theme }) => theme.base.font };
   background: ${({ theme }) => theme.base.background };
   display: block;
+  height: 100%;
   min-height: 100%;
   & a {
     color: ${({ theme }) => theme.base.linkColor };
@@ -84,11 +85,11 @@ class AppContainer extends Component {
                        <Route path="/chat" component={ChatContainer}/>
                    </Switch>
                 </AppContent>
+                <MemoryRouter>
                 <Draggable bounds="body">
-                    <MemoryRouter>
-                        <ChatContainer style={{width: '450px', position: 'absolute', right: '5px', bottom: '5px'}} />
-                    </MemoryRouter>
+                        <ChatContainer style={{width: '450px', height: '300px', position: 'absolute', right: '5px', bottom: '5px'}} />
                 </Draggable>
+                </MemoryRouter>
             </AppContainerStyle>
         </BrowserRouter>
     );

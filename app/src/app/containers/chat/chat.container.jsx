@@ -16,12 +16,16 @@ import ChatWindow from './/chat.window';
 const ChatContainerStyle = styled.aside`
    display: flex;
    flex-direction: column;
+   flex-grow: 1;
    background: white;
    box-shadow: ${( { theme } ) => theme.shadow.z2 };
+   height: 100%;
 `;
 
 const ChatContentStyle = styled.div`
    display: flex;
+   flex-grow: 1;
+   height: 100%;
 `
 class ChatContainer extends Component {
 
@@ -35,6 +39,7 @@ class ChatContainer extends Component {
                         <ChatContentStyle>
                             <ChatMenu />
                             <Switch>
+                                <Route exact path="/" component={ChatHome}/>
                                 <Route exact path="/chat" component={ChatHome}/>
                                 <Route path="/chat/:slug" component={ChatWindow}/>
                             </Switch>
