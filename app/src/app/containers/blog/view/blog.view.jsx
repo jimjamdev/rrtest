@@ -9,7 +9,8 @@ import Loader from "../../../components/loader/loader";
 class blogView extends Component {
 
     componentWillMount() {
-        return Actions.loadArticle(this.props.match.params.slug);
+        const slug = this.props.match.params.slug;
+        return Actions.loadArticle(slug);
     }
 
     render () {
