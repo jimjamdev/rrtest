@@ -7,6 +7,10 @@ import { Actions } from 'jumpstate';
 
 class blogView extends Component {
 
+    componentWillMount() {
+        return Actions.loadArticle('591ab0330d273b17b07732b6');
+    }
+
     render () {
         return (
             <div>Blog View</div>

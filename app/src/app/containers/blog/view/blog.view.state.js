@@ -11,7 +11,7 @@ export default State({
     },
     // LOAD DATA
     loadArticleSuccess (state, payload) {
-        console.log('payload', payload)
+        console.log('article payload', payload)
         return {
             ...state,
             data: payload.data,
