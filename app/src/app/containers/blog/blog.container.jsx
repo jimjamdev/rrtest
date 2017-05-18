@@ -38,8 +38,8 @@ class BlogContainer extends Component {
         );
     }
 }
-export default withRouter(connect(state => {
+export default connect(state => {
     return {
         blog: state.blog
     }
-})(BlogContainer))
+})(BlogContainer)

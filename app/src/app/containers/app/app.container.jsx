@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Actions } from 'jumpstate';
-import { BrowserRouter, Switch, Route, Link, MemoryRouter, withRouter } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Link, MemoryRouter } from 'react-router-dom';
 import Draggable from 'react-draggable';
 import Resizable from 'react-resizable-box';
 import { Helmet } from "react-helmet";
@@ -105,8 +105,8 @@ AppContainer.propTypes = {
     ])
 };
 
-export default withRouter(connect(state => {
+export default connect(state => {
     return {
         app: state.app
     }
-})(AppContainer))
+})(AppContainer)
