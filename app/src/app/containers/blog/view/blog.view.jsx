@@ -9,13 +9,13 @@ import Loader from "../../../components/loader/loader";
 class blogView extends Component {
 
     componentWillMount() {
-        return Actions.loadArticle('591ab0330d273b17b07732b6');
+        return Actions.loadArticle(this.props.match.params.slug);
     }
 
     render () {
 
         const { blogView, loading } = this.props;
-        console.log(blogView);
+        console.log(this.props);
 
         return (
             <div>
