@@ -11,12 +11,11 @@ export default State({
     },
     // LOAD DATA
     loadArticleSuccess (state, payload) {
-        console.log('article payload', payload)
         return {
             ...state,
             data: payload.data,
             error: null,
-            loading: true
+            loading: false
         }
     },
     loadArticleError (state, payload) {

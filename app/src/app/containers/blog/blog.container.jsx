@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Route, Switch, withRouter } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { Actions } from 'jumpstate';
 
 // UI IMPORTS
@@ -13,6 +13,7 @@ import Icon from '../../components/icon/icon';
 // COMPONENT IMPORTS
 import blogList from './list/blog.list';
 import blogView from './view/blog.view';
+import DropDownMenu from "../../components/dropdown-menu/dropdown-menu";
 
 class BlogContainer extends Component {
 
@@ -22,7 +23,12 @@ class BlogContainer extends Component {
                 <AppBar color="white" textColor="darkGrey">
                     <Title>Blog</Title>
                    <div>
-                       <Button color="red" onClick={ () => Actions.loadArticles() }><Icon name="refresh" /></Button>
+                       <DropDownMenu content={<div>blah</div>}>
+                           <Button color="red">Dropdown<Icon name="menu" /></Button>
+                       </DropDownMenu>
+                       <DropDownMenu content={<div>blah</div>}>
+                           <Button color="red" onClick={ () => Actions.loadArticles() }><Icon name="refresh" /></Button>
+                       </DropDownMenu>
                        <Button color="primary" onClick={() => Actions.decrement()}>Decrement on Blog</Button>
                        <Button color="warning" onClick={() => Actions.increment()}>Increment on Blog</Button>
                        <Button color="secondary" onClick={() => Actions.toggleLeftNav()}>Nav on Blog</Button>

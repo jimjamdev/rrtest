@@ -15,12 +15,11 @@ class blogView extends Component {
 
     render () {
 
-        const { blogView, loading } = this.props;
-        console.log(this.props);
+        const { blogView } = this.props;
 
         return (
             <div>
-                { loading ? <Loader/> : (
+                { blogView.loading ? <Loader/> : (
                     <div>
                         <h1>{ blogView.data.title || [] }</h1>
                         <p>{ blogView.data.text || [] }</p>

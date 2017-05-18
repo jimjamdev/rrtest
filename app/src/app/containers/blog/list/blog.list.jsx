@@ -15,8 +15,8 @@ class blogList extends Component {
     }
 
     render () {
-        const { blogList, loading } = this.props;
-        const blogListItems = loading ? <Loader/>
+        const { blogList } = this.props;
+        const blogListItems = blogList.loading ? <Loader/>
             : (blogList.data.data || []).map((blog) =>
                 <ListItem key={blog._id}><Link to={`/blog/${blog._id}`}>{blog.title} {blog.text}</Link></ListItem>
             );
