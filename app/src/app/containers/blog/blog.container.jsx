@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Route, Switch, BrowserRouter } from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router-dom';
 import { Actions } from 'jumpstate';
 
 // UI IMPORTS
@@ -38,8 +38,8 @@ class BlogContainer extends Component {
         );
     }
 }
-export default connect(state => {
+export default withRouter(connect(state => {
     return {
         blog: state.blog
     }
-})(BlogContainer)
+})(BlogContainer))

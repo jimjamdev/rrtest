@@ -20,6 +20,6 @@ class blogView extends Component {
 
 export default connect(state => {
     return {
-        blog: state.blog
+        blogView: state.blogView
     }
 })(blogView)

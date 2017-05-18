@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { Actions } from 'jumpstate';
 
 // UI IMPORTS
@@ -31,8 +31,8 @@ class blogList extends Component {
     }
 }
 
-export default connect(state => {
+export default withRouter(connect(state => {
     return {
         blogList: state.blogList
     }
-})(blogList)
+})(blogList))
