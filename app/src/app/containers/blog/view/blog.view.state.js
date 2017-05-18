@@ -37,7 +37,7 @@ export default State({
 
 const loadArticle = Effect('loadArticle', (payload) => {
     Actions.showBlogArticleLoading(true)
-    axios.get(`${config.ApiUrl}/blog`)
+    axios.get(`${config.ApiUrl}/blog/${payload}`)
         .then(Actions.loadArticleSuccess)
         .catch(Actions.loadArticleError)
 });

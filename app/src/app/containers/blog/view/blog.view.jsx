@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Actions } from 'jumpstate';
+import Loader from "../../../components/loader/loader";
 
 // UI IMPORTS
 
@@ -12,8 +13,19 @@ class blogView extends Component {
     }
 
     render () {
+
+        const { blogView, loading } = this.props;
+        console.log(blogView);
+
         return (
-            <div>Blog View</div>
+            <div>
+                { loading ? <Loader/> : (
+                    <div>
+                        <h1>{ blogView.data.title || [] }</h1>
+                        <p>{ blogView.data.text || [] }</p>
+                    </div>
+                ) }
+            </div>
         )
     }
 }
