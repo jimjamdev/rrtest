@@ -23,7 +23,7 @@ class BlogContainer extends Component {
                 <AppBar color="white" textColor="darkGrey">
                     <Title>Blog</Title>
                    <div>
-                       <DropDownMenu content={<div>blah</div>}>
+                       <DropDownMenu content={<div><a href="#">blah</a></div>}>
                            <Button>Dropdown</Button>
                        </DropDownMenu>
                        <DropDownMenu content={<div>blah</div>}>

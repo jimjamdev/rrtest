@@ -30,7 +30,6 @@ class DropDownMenu extends Component {
      * Toggle our dropdown content
      */
     toggleActive() {
-        console.log('toggle dropdown');
         this.setState({
             isActive: !this.state.isActive
         });
