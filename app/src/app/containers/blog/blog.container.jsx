@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Link } from 'react-router-dom';
 import { Actions } from 'jumpstate';
 
 // UI IMPORTS
@@ -13,6 +13,7 @@ import Icon from '../../components/icon/icon';
 // COMPONENT IMPORTS
 import blogList from './list/blog.list';
 import blogView from './view/blog.view';
+import blogAdd from './add/add.blog';
 import DropDownMenu from "../../components/dropdown-menu/dropdown-menu";
 
 class BlogContainer extends Component {
@@ -29,6 +30,7 @@ class BlogContainer extends Component {
                        <DropDownMenu content={<div>blah</div>}>
                            <Button color="red" onClick={ () => Actions.loadArticles() }><Icon name="refresh" /></Button>
                        </DropDownMenu>
+                       <Button><Link to="/blog/add">Add</Link></Button>
                        <Button color="primary" onClick={() => Actions.decrement()}>Decrement on Blog</Button>
                        <Button color="warning" onClick={() => Actions.increment()}>Increment on Blog</Button>
                        <Button color="secondary" onClick={() => Actions.toggleLeftNav()}>Nav on Blog</Button>
@@ -37,6 +39,7 @@ class BlogContainer extends Component {
                 <Content>
                     <Switch>
                         <Route exact path={`/blog`} component={blogList}/>
+                        <Route exact path={`/blog/add`} component={blogAdd}/>
                         <Route path={`/blog/:slug`} component={blogView}/>
                     </Switch>
                 </Content>
