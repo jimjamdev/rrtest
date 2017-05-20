@@ -69,6 +69,7 @@
     "react-slick": "^0.14.11",
     "react-styled-flexboxgrid": "^1.0.2",
     "redux": "^3.6.0",
+    "redux-form": "^6.7.0",
     "semantic-ui-less": "^2.2.10",
     "semantic-ui-react": "^0.68.0",
     "styled-components": "^1.4.4"
