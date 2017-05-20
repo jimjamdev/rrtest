@@ -1,27 +1,28 @@
 import React from 'react'
 import {Field, reduxForm} from 'redux-form'
+import Button from "../../../components/button/button";
 
-const SimpleForm = props => {
+const AddBlogForm = props => {
     const { handleSubmit } = props
     return (
         <form onSubmit={handleSubmit}>
             <div>
-                <label htmlFor="firstName">First Name</label>
-                <Field name="firstName" component="input" type="text"/>
+                <label htmlFor="title">Title</label>
+                <Field name="title" component="input" type="text"/>
             </div>
             <div>
-                <label htmlFor="lastName">Last Name</label>
-                <Field name="lastName" component="input" type="text"/>
+                <label htmlFor="text">Text</label>
+                <Field name="text" component="input" type="text"/>
             </div>
             <div>
-                <label htmlFor="email">Email</label>
-                <Field name="email" component="input" type="email"/>
+                <label htmlFor="slug">Slug</label>
+                <Field name="slug" component="input" type="text"/>
             </div>
-            <button type="submit">Submit</button>
+            <Button color="primary" type="submit">Submit</Button>
         </form>
     )
 }
 
 export default reduxForm({
-    form: 'simple' // a unique identifier for this form
-})(SimpleForm)
+    form: 'addBlogForm' // a unique identifier for this form
+})(AddBlogForm)

@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import SimpleForm from './add.blog.form'
+import AddBlogForm from './add.blog.form';
+import { Actions } from 'jumpstate';
 
 class blogAdd extends Component {
     submit = (values) => {
-        // Do something with the form values
-        console.log(values);
+        return Actions.addBlog(values);
     }
     render() {
         return (
-            <SimpleForm onSubmit={this.submit} />
+            <AddBlogForm onSubmit={this.submit} />
         );
     }
 }

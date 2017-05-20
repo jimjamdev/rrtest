@@ -35,8 +35,9 @@ export default State({
 })
 
 const addBlog = Effect('addBlog', (payload) => {
+    console.log(payload);
     Actions.addBlogLoading(true)
-    axios.put(`${config.ApiUrl}/blog`)
+    axios.post(`${config.ApiUrl}/blog`)
         .then(Actions.addBlogSuccess)
         .catch(Actions.addBlogError)
 });
