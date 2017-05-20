@@ -5,7 +5,7 @@ import Button from "../../../components/button/button";
 const AddBlogForm = props => {
     const { handleSubmit } = props
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} >
             <div>
                 <label htmlFor="title">Title</label>
                 <Field name="title" component="input" type="text"/>

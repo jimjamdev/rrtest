@@ -7,6 +7,7 @@ import { Actions } from 'jumpstate';
 import Loader from '../../../components/loader/loader';
 import List from '../../../components/list/list';
 import ListItem from '../../../components/list/list-item';
+import blogAdd from "../add/add.blog";
 
 class blogList extends Component {
 
@@ -22,6 +23,7 @@ class blogList extends Component {
             );
         return (
             <div>
+                <blogAdd />
                 <h5>Results: { blogList.data.total || [] }</h5>
                 <List>
                     {blogListItems}
