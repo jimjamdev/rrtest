@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import AddBlogForm from './add.blog.form';
 import { Actions } from 'jumpstate';
 
@@ -13,4 +14,8 @@ class blogAdd extends Component {
     }
 }
 
-export default blogAdd;
+export default connect(state => {
+    return {
+        blogAdd: state.blogAdd
+    }
+})(blogAdd)
