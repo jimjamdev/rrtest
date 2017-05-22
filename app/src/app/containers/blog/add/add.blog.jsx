@@ -9,7 +9,7 @@ class blogAdd extends Component {
     }
     render() {
         return (
-            <AddBlogForm onSubmit={this.submit} />
+            <AddBlogForm form="1" onSubmit={this.submit} />
         );
     }
 }

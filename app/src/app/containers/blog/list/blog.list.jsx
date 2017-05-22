@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Actions } from 'jumpstate';
 
 // UI IMPORTS
+import Select from 'react-select';
 import Loader from '../../../components/loader/loader';
 import List from '../../../components/list/list';
 import ListItem from '../../../components/list/list-item';
@@ -16,6 +17,10 @@ class blogList extends Component {
     }
 
     render () {
+        const options = [
+            { value: 'one', label: 'One' },
+            { value: 'two', label: 'Two' }
+        ];
         const { blogList } = this.props;
         const blogListItems = blogList.loading ? <Loader/>
             : (blogList.data.data || []).map((blog) =>
@@ -23,6 +28,13 @@ class blogList extends Component {
             );
         return (
             <div>
+                <Select
+                    name="form-field-name"
+                    value="one"
+                    multi={true}
+                    options={options}
+                />
+                <h5>Add a new blog</h5>
                 <blogAdd />
                 <h5>Results: { blogList.data.total || [] }</h5>
                 <List>
@@ -35,6 +47,7 @@ class blogList extends Component {
 
 export default connect(state => {
     return {
-        blogList: state.blogList
+        blogList: state.blogList,
+        blogAdd: state.blogAdd
     }
 })(blogList)

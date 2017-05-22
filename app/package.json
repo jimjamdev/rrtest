@@ -51,6 +51,7 @@
   "dependencies": {
     "axios": "^0.16.1",
     "classnames": "^2.2.5",
+    "country-json": "^1.0.2",
     "immutability-helper": "^2.1.2",
     "jumpsuit": "^2.1.2",
     "material-design-icons": "^3.0.1",
@@ -66,6 +67,7 @@
     "react-redux-form": "^1.11.1",
     "react-resizable-box": "^2.0.4",
     "react-router-dom": "^4.0.0",
+    "react-select": "^1.0.0-rc.4",
     "react-slick": "^0.14.11",
     "react-styled-flexboxgrid": "^1.0.2",
     "redux": "^3.6.0",
